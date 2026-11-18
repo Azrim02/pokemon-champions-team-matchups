@@ -15,5 +15,8 @@
     "data": "npm run setup:showdown && npm run data:dex && npm run data:validate",
     "test": "node --test \"test/**/*.test.js\"",
     "test:unit": "node --test test/io.test.js test/usage.test.js test/species.test.js test/validate.test.js"
+  },
+  "dependencies": {
+    "@smogon/calc": "0.12.0"
   }
 }
