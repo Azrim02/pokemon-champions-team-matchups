@@ -2,3 +2,4 @@ node_modules/
 vendor/
 data/usage/**/*.raw.json
 .DS_Store
+dist/
