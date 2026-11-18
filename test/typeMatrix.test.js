@@ -18,6 +18,13 @@ test('defensiveProfile applies ability type modifiers', () => {
   assert.equal(Object.keys(defensiveProfile(['Normal'], tc)).length, 18);
 });
 
+test('Eelevate makes Mega Eelektross immune to Ground', () => {
+  assert.equal(defensiveProfile(['Electric'], tc, 'Eelevate').Ground, 0);
+  const { members, rows } = teamDefense([set('Eelektross', { item: 'Eelektrossite', ability: 'Levitate' })], dataset);
+  assert.deepEqual(members, ['Eelektross-Mega']);
+  assert.deepEqual(rows.find(r => r.type === 'Ground').multipliers, [0]);
+});
+
 test('teamDefense counts weaknesses, resistances and immunities, using Mega formes', () => {
   const team = [
     set('Garchomp', { ability: 'Rough Skin' }),

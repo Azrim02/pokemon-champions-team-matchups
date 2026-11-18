@@ -8,6 +8,7 @@
 export const ABILITY_TYPE_MODIFIERS = {
   'Levitate': { Ground: 0 },
   'Earth Eater': { Ground: 0 },
+  'Eelevate': { Ground: 0 }, // Mega Eelektross, new in Champions
   'Flash Fire': { Fire: 0 },
   'Well-Baked Body': { Fire: 0 },
   'Water Absorb': { Water: 0 },

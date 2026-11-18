@@ -14,7 +14,7 @@ npm run data:usage -- --format gen9championsvgc2026regmcbo3 --cutoff 1500
 | Fetch and build Showdown at the commit pinned in `config.js` | `setup-showdown.js` | `vendor/pokemon-showdown/` (gitignored) |
 | Export legal data using the format's validator | `export-dex.js` | `data/{pokemon,items,moves,abilities,learnsets,typechart,meta}.json` |
 | Consistency checks, plus a diff against `data/reference/regulation-m-c.json` if present | `validate.js` | exit code 1 on errors |
-| Usage stats: raw file plus a trimmed summary | `fetch-usage.js` | `data/usage/<month>/<format>-<cutoff>{,.raw}.json` (gitignored) |
+| Usage stats: raw file plus a trimmed summary | `fetch-usage.js` | `data/usage/<month>/<format>-<cutoff>{,.raw}.json` (raw file gitignored; summary committed) |
 
 ## Tests
 

@@ -24,9 +24,11 @@ _Researched 2026-11-18._
   Restricted Legendaries, Bring 6 Pick 4 (doubles).
 - How to get the legal pool: filter out entries with `isNonstandard: "Past"` /
   `tier: "Illegal"`, then apply the Flat Rules bans.
-- How to load it: don't parse the TypeScript. Load the mod through the `pokemon-showdown`
-  npm package (or `@pkmn/dex` + `@pkmn/mods`) and export JSON. That also provides base
-  stats, types, abilities and learnsets.
+- How to load it: don't parse the TypeScript. `pipeline/setup-showdown.js` clones Showdown
+  from git at the commit pinned in `pipeline/config.js` and builds it, and `export-dex.js`
+  exports JSON through its `Dex`. That also provides base stats, types, abilities and
+  learnsets. The `pokemon-showdown` npm package isn't used: its latest release (0.11.11,
+  2026-07-28) predates M-C.
 
 ### 2. Opponent data: Smogon usage stats
 
@@ -34,7 +36,9 @@ _Researched 2026-11-18._
 - Formats available: `gen9championsvgc2026regmc` and `gen9championsvgc2026regmcbo3`,
   with rating cutoffs `0`, `1500`, `1630`, `1760`.
 - Contents: usage %, items, moves, abilities, spreads, teammates, checks/counters per
-  Pokémon. This is the main input for matchup analysis.
+  Pokémon. Usage, items, moves, abilities and spreads are the main input for matchup
+  analysis. Checks and counters are nearly empty at high cutoffs: at 1760 in 2026-10,
+  only 1 of 277 Pokémon has any, so don't rely on them (try cutoff 0 or 1500).
 - These numbers come from Showdown players, not the in-game ladder.
   [MunchStats](https://www.munchstats.com/about/) has separate in-game usage formats if
   you want to compare.
@@ -43,13 +47,18 @@ _Researched 2026-11-18._
 
 | Source | Notes |
 | --- | --- |
-| [Bulbapedia – Regulation Set M-C](https://bulbapedia.bulbagarden.net/wiki/Draft:Regulation_Set_M-C) | Still a draft page |
+| [Bulbapedia – Regulation Set M-C](https://bulbapedia.bulbagarden.net/wiki/Regulation_Set_M-C) | Full article (the draft page is gone). Omits Kingambit, which is on the official list |
 | [Pokémon-Zone – M-C](https://www.pokemon-zone.com/champions/regulations/m-c/) | Lists the 18 new items (e.g. Absolite Z) |
-| [MetaVGC – M-C](https://metavgc.com/regulations/regulationm-c) | Totals: ~224–229 Pokémon, 148 items, 16 Megas (its pages don't agree) |
+| [MetaVGC – Regulations](https://metavgc.com/regulations) | No M-C page (the M-C URL redirects here). Its "224 Pokémon, 148 items, 16 Megas" are **M-B** figures |
 | [Victory Road – Regulations](https://victoryroad.pro/champions-regulations/) | |
 | [GameWith – M-C](https://gamewith.ai/pokemon-champions/en/articles/regulation-mc) | Counts forms separately; data still being added |
 
-Use these to check the Showdown export, not as the main source.
+Use these to check the Showdown export, not as the main source. The primary list is the
+[official in-game eligible list](https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178713870219xeaaio/en/pokemon.html),
+linked from the official regulation page.
+
+M-C totals, as checked in `docs/verification-report.md`: **231 species** (matches the official
+list by dex number), **166 items** (M-B's 148 plus 18 new, matching Serebii), **81 Mega Stones**.
 
 ### 4. Use with caution
 
@@ -64,8 +73,9 @@ Use these to check the Showdown export, not as the main source.
 1. **Export:** a script loads the Showdown `champions` mod (pinned commit) and writes
    `data/pokemon.json`, `data/items.json`, `data/moves.json` and `data/learnsets.json`,
    filtered to M-C legal entries.
-2. **Validate:** compare species and item lists against the Bulbapedia / Pokémon-Zone
-   M-C lists and report any differences.
+2. **Validate:** compare species and item lists against an external M-C list and report
+   any differences. `validate.js` does this when `data/reference/regulation-m-c.json`
+   exists; it doesn't yet, so the comparison is currently skipped (with a warning).
 3. **Usage:** fetch the latest M-C `chaos` JSON each month (pick the rating cutoff, and
    Bo1 or Bo3) into `data/usage/`.
 4. **Mechanics:** add the type chart and the Champions stat formula for matchup and
