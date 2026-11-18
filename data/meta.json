@@ -1,0 +1,25 @@
+{
+  "regulation": {
+    "id": "M-C",
+    "format": "gen9championsvgc2026regmc",
+    "start": "2026-09-09",
+    "end": "2026-12-02"
+  },
+  "showdownFormat": "[Gen 9 Champions] VGC 2026 Reg M-C",
+  "showdownCommit": "5b88c476113d51a939bddbcd00b5cd182a5d8058",
+  "ruleset": [
+    "Flat Rules",
+    "VGC Timer",
+    "Open Team Sheets"
+  ],
+  "generatedAt": "2026-11-18T15:17:46.070Z",
+  "counts": {
+    "pokemon": 358,
+    "baseSpecies": 231,
+    "megas": 82,
+    "items": 166,
+    "megaStones": 81,
+    "moves": 510,
+    "abilities": 216
+  }
+}

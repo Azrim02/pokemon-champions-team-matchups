@@ -1,0 +1,1739 @@
+[
+  {
+    "id": "abomasite",
+    "name": "Abomasite",
+    "num": 674,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Abomasnow",
+        "to": "Abomasnow-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "absolite",
+    "name": "Absolite",
+    "num": 677,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Absol",
+        "to": "Absol-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "absolitez",
+    "name": "Absolite Z",
+    "num": 2638,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Absol",
+        "to": "Absol-Mega-Z"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "aerodactylite",
+    "name": "Aerodactylite",
+    "num": 672,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Aerodactyl",
+        "to": "Aerodactyl-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "aggronite",
+    "name": "Aggronite",
+    "num": 667,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Aggron",
+        "to": "Aggron-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "airballoon",
+    "name": "Air Balloon",
+    "num": 541,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "alakazite",
+    "name": "Alakazite",
+    "num": 679,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Alakazam",
+        "to": "Alakazam-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "altarianite",
+    "name": "Altarianite",
+    "num": 755,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Altaria",
+        "to": "Altaria-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "ampharosite",
+    "name": "Ampharosite",
+    "num": 658,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Ampharos",
+        "to": "Ampharos-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "aspearberry",
+    "name": "Aspear Berry",
+    "num": 153,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "audinite",
+    "name": "Audinite",
+    "num": 757,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Audino",
+        "to": "Audino-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "babiriberry",
+    "name": "Babiri Berry",
+    "num": 199,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "banettite",
+    "name": "Banettite",
+    "num": 668,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Banette",
+        "to": "Banette-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "barbaracite",
+    "name": "Barbaracite",
+    "num": 2581,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Barbaracle",
+        "to": "Barbaracle-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "baxcalibrite",
+    "name": "Baxcalibrite",
+    "num": 2648,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Baxcalibur",
+        "to": "Baxcalibur-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "beedrillite",
+    "name": "Beedrillite",
+    "num": 770,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Beedrill",
+        "to": "Beedrill-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "bigroot",
+    "name": "Big Root",
+    "num": 296,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "bindingband",
+    "name": "Binding Band",
+    "num": 544,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "blackbelt",
+    "name": "Black Belt",
+    "num": 241,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "blackglasses",
+    "name": "Black Glasses",
+    "num": 240,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "blastoisinite",
+    "name": "Blastoisinite",
+    "num": 661,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Blastoise",
+        "to": "Blastoise-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "blazikenite",
+    "name": "Blazikenite",
+    "num": 664,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Blaziken",
+        "to": "Blaziken-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "brightpowder",
+    "name": "Bright Powder",
+    "num": 213,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "cameruptite",
+    "name": "Cameruptite",
+    "num": 767,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Camerupt",
+        "to": "Camerupt-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "chandelurite",
+    "name": "Chandelurite",
+    "num": 2574,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Chandelure",
+        "to": "Chandelure-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "charcoal",
+    "name": "Charcoal",
+    "num": 249,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "charizarditex",
+    "name": "Charizardite X",
+    "num": 660,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Charizard",
+        "to": "Charizard-Mega-X"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "charizarditey",
+    "name": "Charizardite Y",
+    "num": 678,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Charizard",
+        "to": "Charizard-Mega-Y"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "chartiberry",
+    "name": "Charti Berry",
+    "num": 195,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "cheriberry",
+    "name": "Cheri Berry",
+    "num": 149,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "chesnaughtite",
+    "name": "Chesnaughtite",
+    "num": 2575,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Chesnaught",
+        "to": "Chesnaught-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "chestoberry",
+    "name": "Chesto Berry",
+    "num": 150,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "chilanberry",
+    "name": "Chilan Berry",
+    "num": 200,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "chimechite",
+    "name": "Chimechite",
+    "num": 2637,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Chimecho",
+        "to": "Chimecho-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "choicescarf",
+    "name": "Choice Scarf",
+    "num": 287,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "chopleberry",
+    "name": "Chople Berry",
+    "num": 189,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "clefablite",
+    "name": "Clefablite",
+    "num": 2559,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Clefable",
+        "to": "Clefable-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "cobaberry",
+    "name": "Coba Berry",
+    "num": 192,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "colburberry",
+    "name": "Colbur Berry",
+    "num": 198,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "crabominite",
+    "name": "Crabominite",
+    "num": 2644,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Crabominable",
+        "to": "Crabominable-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "damprock",
+    "name": "Damp Rock",
+    "num": 285,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 60
+  },
+  {
+    "id": "delphoxite",
+    "name": "Delphoxite",
+    "num": 2576,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Delphox",
+        "to": "Delphox-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "dragalgite",
+    "name": "Dragalgite",
+    "num": 2582,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Dragalge",
+        "to": "Dragalge-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "dragonfang",
+    "name": "Dragon Fang",
+    "num": 250,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 70
+  },
+  {
+    "id": "dragoninite",
+    "name": "Dragoninite",
+    "num": 2562,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Dragonite",
+        "to": "Dragonite-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "drampanite",
+    "name": "Drampanite",
+    "num": 2585,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Drampa",
+        "to": "Drampa-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "eelektrossite",
+    "name": "Eelektrossite",
+    "num": 2573,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Eelektross",
+        "to": "Eelektross-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "ejectbutton",
+    "name": "Eject Button",
+    "num": 547,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "electricseed",
+    "name": "Electric Seed",
+    "num": 881,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "emboarite",
+    "name": "Emboarite",
+    "num": 2569,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Emboar",
+        "to": "Emboar-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "excadrite",
+    "name": "Excadrite",
+    "num": 2570,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Excadrill",
+        "to": "Excadrill-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "expertbelt",
+    "name": "Expert Belt",
+    "num": 268,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "fairyfeather",
+    "name": "Fairy Feather",
+    "num": 2401,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "falinksite",
+    "name": "Falinksite",
+    "num": 2587,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Falinks",
+        "to": "Falinks-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "feraligite",
+    "name": "Feraligite",
+    "num": 2564,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Feraligatr",
+        "to": "Feraligatr-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "floettite",
+    "name": "Floettite",
+    "num": 2579,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Floette-Eternal",
+        "to": "Floette-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "focusband",
+    "name": "Focus Band",
+    "num": 230,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "focussash",
+    "name": "Focus Sash",
+    "num": 275,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "froslassite",
+    "name": "Froslassite",
+    "num": 2566,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Froslass",
+        "to": "Froslass-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "galladite",
+    "name": "Galladite",
+    "num": 756,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Gallade",
+        "to": "Gallade-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "garchompite",
+    "name": "Garchompite",
+    "num": 683,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Garchomp",
+        "to": "Garchomp-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "garchompitez",
+    "name": "Garchompite Z",
+    "num": 2640,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Garchomp",
+        "to": "Garchomp-Mega-Z"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "gardevoirite",
+    "name": "Gardevoirite",
+    "num": 657,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Gardevoir",
+        "to": "Gardevoir-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "gengarite",
+    "name": "Gengarite",
+    "num": 656,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Gengar",
+        "to": "Gengar-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "glalitite",
+    "name": "Glalitite",
+    "num": 763,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Glalie",
+        "to": "Glalie-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "glimmoranite",
+    "name": "Glimmoranite",
+    "num": 2650,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Glimmora",
+        "to": "Glimmora-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "golisopite",
+    "name": "Golisopite",
+    "num": 2645,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Golisopod",
+        "to": "Golisopod-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "golurkite",
+    "name": "Golurkite",
+    "num": 2642,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Golurk",
+        "to": "Golurk-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "grassyseed",
+    "name": "Grassy Seed",
+    "num": 884,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "greninjite",
+    "name": "Greninjite",
+    "num": 2577,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Greninja",
+        "to": "Greninja-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "gyaradosite",
+    "name": "Gyaradosite",
+    "num": 676,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Gyarados",
+        "to": "Gyarados-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "habanberry",
+    "name": "Haban Berry",
+    "num": 197,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "hardstone",
+    "name": "Hard Stone",
+    "num": 238,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 100
+  },
+  {
+    "id": "hawluchanite",
+    "name": "Hawluchanite",
+    "num": 2583,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Hawlucha",
+        "to": "Hawlucha-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "heatrock",
+    "name": "Heat Rock",
+    "num": 284,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 60
+  },
+  {
+    "id": "heracronite",
+    "name": "Heracronite",
+    "num": 680,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Heracross",
+        "to": "Heracross-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "houndoominite",
+    "name": "Houndoominite",
+    "num": 666,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Houndoom",
+        "to": "Houndoom-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "icyrock",
+    "name": "Icy Rock",
+    "num": 282,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 40
+  },
+  {
+    "id": "ironball",
+    "name": "Iron Ball",
+    "num": 278,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 130
+  },
+  {
+    "id": "kangaskhanite",
+    "name": "Kangaskhanite",
+    "num": 675,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Kangaskhan",
+        "to": "Kangaskhan-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "kasibberry",
+    "name": "Kasib Berry",
+    "num": 196,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "kebiaberry",
+    "name": "Kebia Berry",
+    "num": 190,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "kingsrock",
+    "name": "King's Rock",
+    "num": 221,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "leek",
+    "name": "Leek",
+    "num": 259,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 60
+  },
+  {
+    "id": "leftovers",
+    "name": "Leftovers",
+    "num": 234,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "leppaberry",
+    "name": "Leppa Berry",
+    "num": 154,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "lifeorb",
+    "name": "Life Orb",
+    "num": 270,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "lightball",
+    "name": "Light Ball",
+    "num": 236,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "lightclay",
+    "name": "Light Clay",
+    "num": 269,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "lopunnite",
+    "name": "Lopunnite",
+    "num": 768,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Lopunny",
+        "to": "Lopunny-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "lucarionite",
+    "name": "Lucarionite",
+    "num": 673,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Lucario",
+        "to": "Lucario-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "lucarionitez",
+    "name": "Lucarionite Z",
+    "num": 2641,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Lucario",
+        "to": "Lucario-Mega-Z"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "lumberry",
+    "name": "Lum Berry",
+    "num": 157,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "magnet",
+    "name": "Magnet",
+    "num": 242,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "malamarite",
+    "name": "Malamarite",
+    "num": 2580,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Malamar",
+        "to": "Malamar-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "manectite",
+    "name": "Manectite",
+    "num": 682,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Manectric",
+        "to": "Manectric-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "mawilite",
+    "name": "Mawilite",
+    "num": 681,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Mawile",
+        "to": "Mawile-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "medichamite",
+    "name": "Medichamite",
+    "num": 665,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Medicham",
+        "to": "Medicham-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "meganiumite",
+    "name": "Meganiumite",
+    "num": 2563,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Meganium",
+        "to": "Meganium-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "mentalherb",
+    "name": "Mental Herb",
+    "num": 219,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "meowsticite",
+    "name": "Meowsticite",
+    "num": 2643,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Meowstic-F",
+        "to": "Meowstic-F-Mega"
+      },
+      {
+        "from": "Meowstic",
+        "to": "Meowstic-M-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "metagrossite",
+    "name": "Metagrossite",
+    "num": 758,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Metagross",
+        "to": "Metagross-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "metalcoat",
+    "name": "Metal Coat",
+    "num": 233,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "metronome",
+    "name": "Metronome",
+    "num": 277,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "miracleseed",
+    "name": "Miracle Seed",
+    "num": 239,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "mistyseed",
+    "name": "Misty Seed",
+    "num": 883,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "muscleband",
+    "name": "Muscle Band",
+    "num": 266,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "mysticwater",
+    "name": "Mystic Water",
+    "num": 243,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "nevermeltice",
+    "name": "Never-Melt Ice",
+    "num": 246,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "normalgem",
+    "name": "Normal Gem",
+    "num": 564,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": null
+  },
+  {
+    "id": "occaberry",
+    "name": "Occa Berry",
+    "num": 184,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "oranberry",
+    "name": "Oran Berry",
+    "num": 155,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "passhoberry",
+    "name": "Passho Berry",
+    "num": 185,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "payapaberry",
+    "name": "Payapa Berry",
+    "num": 193,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "pechaberry",
+    "name": "Pecha Berry",
+    "num": 151,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "persimberry",
+    "name": "Persim Berry",
+    "num": 156,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "pidgeotite",
+    "name": "Pidgeotite",
+    "num": 762,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Pidgeot",
+        "to": "Pidgeot-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "pinsirite",
+    "name": "Pinsirite",
+    "num": 671,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Pinsir",
+        "to": "Pinsir-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "poisonbarb",
+    "name": "Poison Barb",
+    "num": 245,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 70
+  },
+  {
+    "id": "psychicseed",
+    "name": "Psychic Seed",
+    "num": 882,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "pyroarite",
+    "name": "Pyroarite",
+    "num": 2578,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Pyroar",
+        "to": "Pyroar-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "quickclaw",
+    "name": "Quick Claw",
+    "num": 217,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 80
+  },
+  {
+    "id": "raichunitex",
+    "name": "Raichunite X",
+    "num": 2635,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Raichu",
+        "to": "Raichu-Mega-X"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "raichunitey",
+    "name": "Raichunite Y",
+    "num": 2636,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Raichu",
+        "to": "Raichu-Mega-Y"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "rawstberry",
+    "name": "Rawst Berry",
+    "num": 152,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "redcard",
+    "name": "Red Card",
+    "num": 542,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "rindoberry",
+    "name": "Rindo Berry",
+    "num": 187,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "rockyhelmet",
+    "name": "Rocky Helmet",
+    "num": 540,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 60
+  },
+  {
+    "id": "roseliberry",
+    "name": "Roseli Berry",
+    "num": 686,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "sablenite",
+    "name": "Sablenite",
+    "num": 754,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Sableye",
+        "to": "Sableye-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "salamencite",
+    "name": "Salamencite",
+    "num": 769,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Salamence",
+        "to": "Salamence-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "sceptilite",
+    "name": "Sceptilite",
+    "num": 753,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Sceptile",
+        "to": "Sceptile-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "scizorite",
+    "name": "Scizorite",
+    "num": 670,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Scizor",
+        "to": "Scizor-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "scolipite",
+    "name": "Scolipite",
+    "num": 2571,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Scolipede",
+        "to": "Scolipede-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "scopelens",
+    "name": "Scope Lens",
+    "num": 232,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "scovillainite",
+    "name": "Scovillainite",
+    "num": 2647,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Scovillain",
+        "to": "Scovillain-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "scraftinite",
+    "name": "Scraftinite",
+    "num": 2572,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Scrafty",
+        "to": "Scrafty-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "sharpbeak",
+    "name": "Sharp Beak",
+    "num": 244,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 50
+  },
+  {
+    "id": "sharpedonite",
+    "name": "Sharpedonite",
+    "num": 759,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Sharpedo",
+        "to": "Sharpedo-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "shedshell",
+    "name": "Shed Shell",
+    "num": 295,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "shellbell",
+    "name": "Shell Bell",
+    "num": 253,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "shucaberry",
+    "name": "Shuca Berry",
+    "num": 191,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "silkscarf",
+    "name": "Silk Scarf",
+    "num": 251,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "silverpowder",
+    "name": "Silver Powder",
+    "num": 222,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "sitrusberry",
+    "name": "Sitrus Berry",
+    "num": 158,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "skarmorite",
+    "name": "Skarmorite",
+    "num": 2565,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Skarmory",
+        "to": "Skarmory-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "slowbronite",
+    "name": "Slowbronite",
+    "num": 760,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Slowbro",
+        "to": "Slowbro-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "smoothrock",
+    "name": "Smooth Rock",
+    "num": 283,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "softsand",
+    "name": "Soft Sand",
+    "num": 237,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "spelltag",
+    "name": "Spell Tag",
+    "num": 247,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "staraptite",
+    "name": "Staraptite",
+    "num": 2639,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Staraptor",
+        "to": "Staraptor-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "starminite",
+    "name": "Starminite",
+    "num": 2561,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Starmie",
+        "to": "Starmie-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "steelixite",
+    "name": "Steelixite",
+    "num": 761,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Steelix",
+        "to": "Steelix-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "swampertite",
+    "name": "Swampertite",
+    "num": 752,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Swampert",
+        "to": "Swampert-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "tangaberry",
+    "name": "Tanga Berry",
+    "num": 194,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "terrainextender",
+    "name": "Terrain Extender",
+    "num": 879,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 60
+  },
+  {
+    "id": "twistedspoon",
+    "name": "Twisted Spoon",
+    "num": 248,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 30
+  },
+  {
+    "id": "tyranitarite",
+    "name": "Tyranitarite",
+    "num": 669,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Tyranitar",
+        "to": "Tyranitar-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "venusaurite",
+    "name": "Venusaurite",
+    "num": 659,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Venusaur",
+        "to": "Venusaur-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "victreebelite",
+    "name": "Victreebelite",
+    "num": 2560,
+    "category": "mega-stone",
+    "megaEvolves": [
+      {
+        "from": "Victreebel",
+        "to": "Victreebel-Mega"
+      }
+    ],
+    "flingBasePower": 80
+  },
+  {
+    "id": "wacanberry",
+    "name": "Wacan Berry",
+    "num": 186,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "whiteherb",
+    "name": "White Herb",
+    "num": 214,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "widelens",
+    "name": "Wide Lens",
+    "num": 265,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "wiseglasses",
+    "name": "Wise Glasses",
+    "num": 267,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "yacheberry",
+    "name": "Yache Berry",
+    "num": 188,
+    "category": "berry",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  },
+  {
+    "id": "zoomlens",
+    "name": "Zoom Lens",
+    "num": 276,
+    "category": "held",
+    "megaEvolves": [],
+    "flingBasePower": 10
+  }
+]

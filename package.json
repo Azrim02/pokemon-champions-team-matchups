@@ -1,0 +1,17 @@
+{
+  "name": "pokemon-champions-team-matchups",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Data pipeline + dashboard for Pokémon Champions team matchup analysis",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "setup:showdown": "node pipeline/setup-showdown.js",
+    "data:dex": "node pipeline/export-dex.js",
+    "data:usage": "node pipeline/fetch-usage.js",
+    "data:validate": "node pipeline/validate.js",
+    "data": "npm run setup:showdown && npm run data:dex && npm run data:validate"
+  }
+}
