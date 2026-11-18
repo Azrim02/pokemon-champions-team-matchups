@@ -203,3 +203,81 @@ label.block:has(input[type='number']) { flex-direction: row; align-items: center
 .col-head span { display: block; }
 .speed .name { display: inline-flex; align-items: center; gap: 4px; }
 .opp-sets li { display: flex; gap: 8px; align-items: flex-start; }
+
+/* ---------- Small screens ---------- */
+
+/* Collapsed sidebar panels (only rendered on stacked layouts) */
+.collapse { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.collapse > summary {
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px; min-height: 48px;
+  cursor: pointer; list-style: none;
+}
+.collapse > summary::-webkit-details-marker { display: none; }
+.collapse > summary::after { content: '▾'; margin-left: auto; color: var(--muted); transition: transform 0.15s; }
+.collapse[open] > summary::after { transform: rotate(180deg); }
+.collapse-title { font-weight: 600; flex: none; }
+.collapse-summary {
+  display: flex; align-items: center; gap: 6px; min-width: 0; color: var(--muted); font-size: 0.85rem;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.mini-team { display: inline-flex; flex: none; }
+.collapse .panel { border: 0; border-top: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); }
+.collapse .panel-head h2 { display: none; }
+.collapse .panel-head { justify-content: flex-end; }
+
+/* Phone damage view: one of your Pokémon at a time */
+.mon-picker { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 6px; scrollbar-width: thin; }
+.mon-picker button {
+  flex: none; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 72px; padding: 4px 2px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; font-size: 0.75rem;
+}
+.mon-picker button span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mon-picker button[aria-selected='true'] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.dmg-cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.dmg-cards > li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.dmg-cards > li.open { border-color: var(--accent); }
+.dmg-card {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr); grid-template-areas: 'sprite name' 'sprite hits';
+  column-gap: 8px; row-gap: 2px; align-items: center; width: 100%; padding: 6px 8px;
+  background: none; border: 0; text-align: left; cursor: pointer;
+}
+.dmg-card .sprite { grid-area: sprite; }
+.dmg-name { grid-area: name; display: flex; align-items: baseline; gap: 6px; }
+.dmg-hits { grid-area: hits; display: grid; gap: 2px; font-size: 0.8rem; min-width: 0; }
+.dmg-hits .hit { overflow: hidden; text-overflow: ellipsis; }
+.dmg-cards .detail { margin: 0; padding: 0 8px 8px; grid-template-columns: minmax(0, 1fr); }
+
+@media (max-width: 860px) {
+  .app { gap: 10px; padding: 12px; }
+  .top h1 { font-size: 1.1rem; }
+  .side { gap: 8px; }
+  /* Keep the tabs reachable while scrolling a long result list */
+  .tabs { position: sticky; top: 0; z-index: 5; background: var(--bg); margin: 0 -12px 10px; padding: 0 12px; }
+  .tabs button { padding: 12px 10px; }
+}
+
+@media (max-width: 640px) {
+  .app { padding: 12px 16px; }
+  /* 16px stops iOS zooming into form fields on focus */
+  select, input[type='number'], textarea, .paste { font-size: 16px; }
+  .checks label, .side-table input { min-height: 32px; }
+  .side-table input { width: 22px; height: 22px; }
+  .field-grid { grid-template-columns: 1fr 1fr; }
+  .field-grid label:first-child { grid-column: 1 / -1; }
+  .status { flex-basis: 100%; margin: 0 0 6px; }
+  .status:empty { display: none; }
+  .legend { font-size: 0.8rem; }
+
+  /* Narrow grids: smaller cells and sprite-only column headers */
+  .matrix th, .matrix td { padding: 3px 4px; }
+  .matrix .col-head span { display: none; }
+  .matrix .col-head .sprite, .matrix tbody th .sprite { width: 30px !important; height: 30px !important; }
+  .type-matrix th:first-child .type { font-size: 0.65rem; }
+  .matrix tbody th { font-size: 0.8rem; }
+  .matrix tbody th .who { gap: 2px; }
+  .type-matrix td.eff { min-width: 32px; padding: 3px 2px; }
+  .moves td { padding: 4px 2px; }
+
+  .speed li { grid-template-columns: 24px minmax(0, 1fr) 72px 36px; gap: 6px; padding: 2px 4px; }
+  .speed .name { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+}

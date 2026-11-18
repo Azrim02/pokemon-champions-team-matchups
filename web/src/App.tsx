@@ -13,6 +13,10 @@ import { OpponentsPanel, type OppSettings } from './components/OpponentsPanel';
 import { DamageMatrix } from './components/DamageMatrix';
 import { SpeedTiers } from './components/SpeedTiers';
 import { CoverageTable, DefenseTable } from './components/TypeTables';
+import { Collapsible } from './components/Collapsible';
+import { Sprite } from './components/Sprite';
+import { battleForme } from './lib/format';
+import { STACKED, useMediaQuery } from './lib/useMediaQuery';
 
 const TABS = ['Damage', 'Speed', 'Defense', 'Coverage'] as const;
 type Tab = (typeof TABS)[number];
@@ -32,6 +36,18 @@ function sampleTeam(usage: UsageSummary, dataset: Dataset): string {
     if (picked.length === 6) break;
   }
   return exportTeam(picked);
+}
+
+/** One-line description of the field, e.g. "Doubles · Sun · Tailwind (you)". */
+function fieldSummary(c: UiConditions) {
+  const sides = (s: UiConditions['mySide'], who: string) => [
+    s.isTailwind && 'Tailwind', s.isReflect && 'Reflect', s.isLightScreen && 'Light Screen',
+    s.isAuroraVeil && 'Aurora Veil', s.isHelpingHand && 'Helping Hand', s.isFriendGuard && 'Friend Guard',
+  ].filter(Boolean).map(x => `${x} (${who})`);
+  return [
+    c.gameType, c.weather, c.terrain && `${c.terrain} Terrain`, c.trickRoom && 'Trick Room', c.isGravity && 'Gravity',
+    ...sides(c.mySide, 'you'), ...sides(c.oppSide, 'them'),
+  ].filter(Boolean).join(' · ');
 }
 
 export function App() {
@@ -97,6 +113,7 @@ export function App() {
   }), [cond]);
 
   const calc = useCalcWorker(dex, myTeam, opponents, conditions);
+  const stacked = useMediaQuery(STACKED);
   const defense = useMemo(() => (dataset && myTeam.length ? teamDefense(myTeam, dataset) : null), [myTeam, dataset]);
   const coverage = useMemo(
     () => (dataset && myTeam.length && opponents.length ? teamCoverage(myTeam, opponents, dataset) : null),
@@ -125,6 +142,14 @@ export function App() {
       </header>
 
       <aside className="side">
+        <Collapsible enabled={stacked} title="Your team" summary={
+          <>
+            <span className="mini-team">
+              {myTeam.map((s, i) => <Sprite key={i} species={battleForme(s, dataset)} dataset={dataset} size={28} />)}
+            </span>
+            {problems.length ? <span className="warn">{problems.length} issue{problems.length > 1 ? 's' : ''}</span> : null}
+          </>
+        }>
         <TeamPanel text={teamText} onText={setTeamText} sets={parsed} problems={problems} dataset={dataset}
           teams={savedTeams}
           onLoad={id => {
@@ -132,9 +157,16 @@ export function App() {
             const t = savedTeams.find(x => x.id === id);
             if (t) setTeamText(t.text);
           }} />
-        <ConditionsPanel value={cond} onChange={setCond} />
-        <OpponentsPanel value={opp} onChange={setOpp} usageFiles={usageFiles} usage={usage}
-          opponents={opponents} missing={missing} dataset={dataset} />
+        </Collapsible>
+        <Collapsible enabled={stacked} title="Field" summary={fieldSummary(cond)}>
+          <ConditionsPanel value={cond} onChange={setCond} />
+        </Collapsible>
+        <Collapsible enabled={stacked} title="Opponents" summary={
+          opp.mode === 'top' ? `Top ${opp.topN} by usage` : `Team preview · ${opponents.length}`
+        }>
+          <OpponentsPanel value={opp} onChange={setOpp} usageFiles={usageFiles} usage={usage}
+            opponents={opponents} missing={missing} dataset={dataset} />
+        </Collapsible>
       </aside>
 
       <main className="main">

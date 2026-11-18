@@ -3,6 +3,7 @@ import type { CalcResult, Dataset, MoveCalc, PokemonSet } from '../types';
 import { band, battleForme, bestMove, compareSpeed, label, pctRange } from '../lib/format';
 import { Sprite } from './Sprite';
 import { TypeBadge } from './TypeBadge';
+import { PHONE, useMediaQuery } from '../lib/useMediaQuery';
 
 interface Props {
   myTeam: PokemonSet[];
@@ -14,7 +15,73 @@ interface Props {
 
 const SPEED_MARK = { faster: '▲ faster', slower: '▼ slower', tie: '= tie' };
 
-export function DamageMatrix({ myTeam, opponents, result, trickRoom, dataset }: Props) {
+export function DamageMatrix(props: Props) {
+  return useMediaQuery(PHONE) ? <DamageCards {...props} /> : <DamageGrid {...props} />;
+}
+
+const LEGEND = (
+  <>
+    <span className="swatch ko" /> guaranteed OHKO <span className="swatch heavy" /> 50%+ max roll <span className="swatch light" /> under 50%
+  </>
+);
+
+/** Phone layout: pick one of your Pokémon, then one card per opponent. Tap a card for every move. */
+function DamageCards({ myTeam, opponents, result, trickRoom, dataset }: Props) {
+  const [pick, setPick] = useState(0);
+  const [open, setOpen] = useState<number | null>(null);
+  const i = Math.min(pick, myTeam.length - 1);
+  const me = myTeam[i];
+
+  return (
+    <div>
+      <div className="mon-picker" role="tablist" aria-label="Your Pokémon">
+        {myTeam.map((m, k) => (
+          <button key={k} type="button" role="tab" aria-selected={k === i} onClick={() => { setPick(k); setOpen(null); }}>
+            <Sprite species={battleForme(m, dataset)} dataset={dataset} size={44} />
+            <span>{label(m)}</span>
+          </button>
+        ))}
+      </div>
+      <p className="legend">↗ your best move · ↘ theirs, by max roll. {LEGEND}</p>
+      <ul className="dmg-cards">
+        {opponents.map((o, j) => {
+          const p = result.grid[i]?.[j];
+          if (!p) return null;
+          const mine = bestMove(p.myMoves);
+          const theirs = bestMove(p.theirMoves);
+          const a = result.mySpeeds[i], b = result.oppSpeeds[j];
+          const spd = a != null && b != null ? compareSpeed(a, b, trickRoom) : null;
+          const isOpen = open === j;
+          return (
+            <li key={j} className={isOpen ? 'open' : undefined}>
+              <button type="button" className="dmg-card" aria-expanded={isOpen} onClick={() => setOpen(isOpen ? null : j)}>
+                <Sprite species={battleForme(o, dataset)} dataset={dataset} size={44} />
+                <span className="dmg-name">
+                  <strong>{label(o)}</strong>
+                  {spd && <span className={`spd ${spd}`}>{SPEED_MARK[spd]}</span>}
+                </span>
+                {p.error ? <span className="warn small">{p.error}</span> : (
+                  <span className="dmg-hits">
+                    <span className={`hit out ${band(mine)}`}>{mine ? `${mine.move} ${pctRange(mine)}` : '—'}</span>
+                    <span className={`hit in ${band(theirs)}`}>{theirs ? `${theirs.move} ${pctRange(theirs)}` : '—'}</span>
+                  </span>
+                )}
+              </button>
+              {isOpen && !p.error && (
+                <div className="detail">
+                  <MoveList title={`Your ${label(me)} → their ${label(o)}`} moves={p.myMoves} dir="out" />
+                  <MoveList title={`Their ${label(o)} → your ${label(me)}`} moves={p.theirMoves} dir="in" />
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+function DamageGrid({ myTeam, opponents, result, trickRoom, dataset }: Props) {
   const [sel, setSel] = useState<[number, number] | null>(null);
   const pair = sel && result.grid[sel[0]]?.[sel[1]];
 
@@ -22,7 +89,7 @@ export function DamageMatrix({ myTeam, opponents, result, trickRoom, dataset }: 
     <div>
       <p className="legend">
         Each cell shows your best move into them (top) and their best move into you (bottom), by max roll.
-        <span className="swatch ko" /> guaranteed OHKO <span className="swatch heavy" /> 50%+ max roll <span className="swatch light" /> under 50%
+        {LEGEND}
       </p>
       <div className="scroll">
         <table className="matrix damage">
