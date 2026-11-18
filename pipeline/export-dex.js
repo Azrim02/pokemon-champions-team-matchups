@@ -4,22 +4,13 @@ import path from 'node:path';
 import { PATHS, REGULATION, SHOWDOWN } from './config.js';
 import { loadFormat, isLegalSpecies, isLegalItem } from './lib/showdown.js';
 import { writeJson } from './lib/io.js';
+import { selectLegalSpecies, buildTypechart } from './lib/species.js';
 
 const { format, dex, validator } = loadFormat();
 const byName = (a, b) => a.name.localeCompare(b.name);
 
 // --- Pokémon ---------------------------------------------------------------
-// Cosmetic formes (Vivillon patterns, Alcremie flavours…) are dropped; they're listed on the base.
-// Battle-only formes (Megas, Palafin-Hero…) are only kept if the forme they change from is legal;
-// the validator checks formes in isolation, so e.g. Ogerpon-*-Tera would slip through otherwise.
-const outOfBattleLegal = dex.species.all()
-  .filter(s => s.exists && !s.battleOnly && isLegalSpecies(validator, s));
-const outOfBattleNames = new Set(outOfBattleLegal.map(s => s.name));
-const changesFromLegal = s => [s.battleOnly].flat().some(name => outOfBattleNames.has(name));
-const legalSpecies = dex.species.all()
-  .filter(s => s.exists && !s.isCosmeticForme && isLegalSpecies(validator, s))
-  .filter(s => !s.battleOnly || changesFromLegal(s))
-  .sort(byName);
+const legalSpecies = selectLegalSpecies(dex.species.all(), s => isLegalSpecies(validator, s));
 const legalSpeciesIds = new Set(legalSpecies.map(s => s.id));
 
 const learnsets = {};
@@ -100,14 +91,8 @@ const abilities = [...abilityNames]
   .map(a => ({ id: a.id, name: a.name, shortDesc: a.shortDesc || a.desc, desc: a.desc }));
 
 // --- Type chart: typechart[attacking][defending] = multiplier ---------------
-const DAMAGE_TAKEN = { 0: 1, 1: 2, 2: 0.5, 3: 0 };
 // Stellar only exists for Terastallization, which Champions doesn't have.
-const types = dex.types.all().filter(t => !t.isNonstandard && t.name !== 'Stellar').map(t => t.name);
-const typechart = {};
-for (const atk of types) {
-  typechart[atk] = {};
-  for (const def of types) typechart[atk][def] = DAMAGE_TAKEN[dex.types.get(def).damageTaken[atk] ?? 0];
-}
+const typechart = buildTypechart(dex.types.all().filter(t => !t.isNonstandard && t.name !== 'Stellar'));
 
 // --- Write -----------------------------------------------------------------
 const meta = {
@@ -115,7 +100,7 @@ const meta = {
   showdownFormat: format.name,
   showdownCommit: SHOWDOWN.commit,
   ruleset: format.ruleset,
-  generatedAt: new Date().toISOString(),
+  // No timestamp on purpose: output is deterministic for a given commit, so git diffs stay clean.
   counts: {
     pokemon: pokemon.length,
     baseSpecies: new Set(pokemon.map(p => p.baseSpecies)).size,

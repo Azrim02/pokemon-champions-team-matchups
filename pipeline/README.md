@@ -16,6 +16,25 @@ npm run data:usage -- --format gen9championsvgc2026regmcbo3 --cutoff 1500
 | Consistency checks, plus a diff against `data/reference/regulation-m-c.json` if present | `validate.js` | exit code 1 on errors |
 | Usage stats: raw file plus a trimmed summary | `fetch-usage.js` | `data/usage/<month>/<format>-<cutoff>{,.raw}.json` (gitignored) |
 
+## Tests
+
+```sh
+npm test         # everything (Showdown integration tests skip unless setup:showdown has run)
+npm run test:unit
+```
+
+- `test/{io,usage,species,validate}.test.js`: unit tests for the pure helpers in `pipeline/lib/`.
+- `test/data.test.js`: regression checks on the committed `data/*.json` (known legal and illegal
+  Pokémon, Mega Stones, type chart).
+- `test/showdown.test.js`: checks the legality helpers against the built sim, and fails if
+  `data/pokemon.json` is out of date for the pinned commit.
+
+## What's committed
+
+The dex export and the monthly usage summaries are committed. The raw Smogon downloads
+(`*.raw.json`, ~19 MB each) are gitignored and can be downloaded again with `--force`.
+The export has no timestamp, so re-running it at the same commit gives no git diff.
+
 ## Notes
 
 - **Joining data:** join on `id`, not on `name`. For example, Showdown writes Sirfetch’d with a

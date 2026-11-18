@@ -12,6 +12,8 @@
     "data:dex": "node pipeline/export-dex.js",
     "data:usage": "node pipeline/fetch-usage.js",
     "data:validate": "node pipeline/validate.js",
-    "data": "npm run setup:showdown && npm run data:dex && npm run data:validate"
+    "data": "npm run setup:showdown && npm run data:dex && npm run data:validate",
+    "test": "node --test \"test/**/*.test.js\"",
+    "test:unit": "node --test test/io.test.js test/usage.test.js test/species.test.js test/validate.test.js"
   }
 }
