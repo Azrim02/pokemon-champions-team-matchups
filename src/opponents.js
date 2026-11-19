@@ -29,6 +29,10 @@ export function likelySets(entry, dataset, { spreads = 1 } = {}) {
 
   const item = entry.items.find(i => i.id !== 'nothing' && dataset.getItem(i.id));
   const ability = entry.abilities.find(a => dataset.getAbility(a.id) && canHave(a));
+  // What the Pokémon battles with: for a Mega that's the Mega's ability (Drought), which
+  // can't go on the registered base forme, so it's reported separately.
+  const seenHas = a => Object.values(seen.abilities).includes(dataset.getAbility(a.id)?.name);
+  const battle = seen === species ? ability : entry.abilities.find(a => dataset.getAbility(a.id) && seenHas(a));
   const moves = entry.moves.filter(m => m.id && dataset.getMove(m.id)).slice(0, 4);
   const topSpreads = entry.spreads.length ? entry.spreads.slice(0, spreads) : [null];
 
@@ -45,6 +49,8 @@ export function likelySets(entry, dataset, { spreads = 1 } = {}) {
       usagePct: entry.usagePct,
       itemPct: item?.pct ?? null,
       abilityPct: ability?.pct ?? null,
+      battleAbility: battle ? dataset.getAbility(battle.id).name : Object.values(seen.abilities)[0],
+      battleAbilityPct: battle?.pct ?? null,
       spreadPct: s?.pct ?? null,
       movePcts: moves.map(m => m.pct),
     },

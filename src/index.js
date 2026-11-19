@@ -5,3 +5,4 @@ export { gen, toCalcPokemon, toField, calcMove, calcSetVsSet, calcMatchup } from
 export { speedOf, speedTiers, compareSpeed } from './speed.js';
 export { effectiveness, defensiveProfile, teamDefense, teamCoverage, ABILITY_TYPE_MODIFIERS } from './typeMatrix.js';
 export { parseSpread, likelySets, likelyTeam, topThreats } from './opponents.js';
+export { WEATHER_ABILITIES, battleAbility, setterWeather, pairingWeather } from './weather.js';

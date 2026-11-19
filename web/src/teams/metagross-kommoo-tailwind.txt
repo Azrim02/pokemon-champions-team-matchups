@@ -1,0 +1,55 @@
+=== [gen9championsvgc2026regmc] Metagross / Kommo-o / Tailwind ===
+
+Metagross @ Metagrossite
+Ability: Clear Body
+EVs: 2 HP / 32 Atk / 32 Spe
+Jolly Nature
+- Psychic Fangs
+- Iron Head
+- Ice Punch
+- Protect
+
+Kommo-o @ Life Orb
+Ability: Soundproof
+EVs: 2 HP / 32 Atk / 32 Spe
+Jolly Nature
+- Close Combat
+- Dragon Claw
+- Iron Head
+- Protect
+
+Incineroar @ Sitrus Berry
+Ability: Intimidate
+EVs: 32 HP / 2 Atk / 32 SpD
+Careful Nature
+- Fake Out
+- Parting Shot
+- Flare Blitz
+- Throat Chop
+
+Whimsicott @ Focus Sash
+Ability: Prankster
+EVs: 2 HP / 32 SpA / 32 Spe
+Timid Nature
+- Tailwind
+- Moonblast
+- Encore
+- Taunt
+
+Basculegion @ Mystic Water
+Ability: Adaptability
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Wave Crash
+- Last Respects
+- Aqua Jet
+- Protect
+
+Sylveon @ Fairy Feather
+Ability: Pixilate
+EVs: 32 HP / 32 SpA / 2 SpD
+Modest Nature
+- Hyper Voice
+- Moonblast
+- Protect
+- Quick Attack

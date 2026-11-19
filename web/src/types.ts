@@ -16,6 +16,9 @@ export interface SetUsage {
   usagePct: number;
   itemPct: number | null;
   abilityPct: number | null;
+  /** The ability it battles with (a Mega's own ability), which may differ from `ability` */
+  battleAbility: string;
+  battleAbilityPct: number | null;
   spreadPct: number | null;
   movePcts: number[];
 }
@@ -47,6 +50,8 @@ export interface Conditions {
   weather?: string;
   terrain?: string;
   isGravity?: boolean;
+  /** Pairings involving a weather setter use the setter's weather (src/weather.js) instead of `weather` */
+  autoWeather?: boolean;
   mySide?: SideConditions;
   oppSide?: SideConditions;
 }
@@ -150,7 +155,13 @@ export interface CalcRequest {
   conditions: Conditions;
 }
 
-export interface Pairing { myMoves: MoveCalc[]; theirMoves: MoveCalc[]; error?: string }
+export interface Pairing {
+  myMoves: MoveCalc[];
+  theirMoves: MoveCalc[];
+  /** Set when "weather from setters" gave this pairing a weather other than the field's */
+  setterWeather?: string;
+  error?: string;
+}
 
 export interface CalcResult {
   /** grid[i][j]: my team member i against opponent j */

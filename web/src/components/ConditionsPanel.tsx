@@ -3,6 +3,7 @@ import type { SideConditions } from '../types';
 export interface UiConditions {
   gameType: 'Doubles' | 'Singles';
   weather: string;
+  autoWeather: boolean;
   terrain: string;
   isGravity: boolean;
   trickRoom: boolean;
@@ -11,7 +12,7 @@ export interface UiConditions {
 }
 
 export const DEFAULT_CONDITIONS: UiConditions = {
-  gameType: 'Doubles', weather: '', terrain: '', isGravity: false, trickRoom: false, mySide: {}, oppSide: {},
+  gameType: 'Doubles', weather: '', autoWeather: false, terrain: '', isGravity: false, trickRoom: false, mySide: {}, oppSide: {},
 };
 
 const WEATHER = ['Sun', 'Rain', 'Sand', 'Snow'];
@@ -56,6 +57,9 @@ export function ConditionsPanel({ value, onChange }: Props) {
         </label>
       </div>
       <div className="checks">
+        <label title="A pairing with Charizard-Mega-Y, Pelipper or another weather setter is calc'd in that setter's weather. The weather above applies to the rest.">
+          <input type="checkbox" checked={!!value.autoWeather} onChange={e => set('autoWeather', e.target.checked)} /> Weather from setters
+        </label>
         <label><input type="checkbox" checked={value.trickRoom} onChange={e => set('trickRoom', e.target.checked)} /> Trick Room</label>
         <label><input type="checkbox" checked={value.isGravity} onChange={e => set('isGravity', e.target.checked)} /> Gravity</label>
       </div>

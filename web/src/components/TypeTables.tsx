@@ -63,7 +63,7 @@ export function CoverageTable({ myTeam, opponents, cells, dataset }: {
               {opponents.map((o, j) => (
                 <th key={j} scope="col" className="col-head">
                   <Sprite species={battleForme(o, dataset)} dataset={dataset} />
-                  <span>{label(o)}</span>
+                  <span>{label(o, dataset)}</span>
                 </th>
               ))}
             </tr>
@@ -71,7 +71,7 @@ export function CoverageTable({ myTeam, opponents, cells, dataset }: {
           <tbody>
             {myTeam.map((m, i) => (
               <tr key={i}>
-                <th scope="row"><span className="who"><Sprite species={battleForme(m, dataset)} dataset={dataset} />{label(m)}</span></th>
+                <th scope="row"><span className="who"><Sprite species={battleForme(m, dataset)} dataset={dataset} />{label(m, dataset)}</span></th>
                 {opponents.map((_, j) => {
                   const c = at(i, j);
                   const cls = c?.best == null ? '' : c.best > 1 ? 'weak' : c.best < 1 ? 'resist' : 'neutral';

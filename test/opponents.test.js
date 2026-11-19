@@ -42,6 +42,15 @@ test('likelySets registers a Mega seen in usage as its base forme holding the st
   // Drought belongs to the Mega, so the base forme falls back to one of its own abilities.
   assert.ok(Object.values(dataset.getPokemon('Charizard').abilities).includes(s.ability));
   assert.deepEqual(validateTeam([s], dataset), []);
+  // …but the ability it battles with is still reported, for display.
+  assert.equal(s.usage.battleAbility, 'Drought');
+  assert.equal(s.usage.battleAbilityPct, 100);
+});
+
+test('likelySets reports the battle ability as the registered one for a non-Mega', () => {
+  const [s] = likelySets(usage.pokemon[1], dataset);
+  assert.equal(s.usage.battleAbility, 'Defiant');
+  assert.equal(s.usage.battleAbilityPct, 90);
 });
 
 test('likelySets picks the top four real moves, skipping empty slots', () => {

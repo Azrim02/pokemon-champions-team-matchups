@@ -1,12 +1,13 @@
 import type { Dataset, MoveCalc, PokemonSet } from '../types';
 
-export const label = (set: PokemonSet) => set.name || set.species;
-
 /** Species shown in battle: the Mega forme when holding its Mega Stone. */
 export function battleForme(set: PokemonSet, dataset: Dataset) {
   const mega = set.state?.mega === false ? null : dataset.megaFormeFor(set.species, set.item);
   return mega ?? set.species;
 }
+
+/** Display name: the nickname, else the battle forme (so Garchomp, Garchomp-Mega and Garchomp-Mega-Z differ). */
+export const label = (set: PokemonSet, dataset: Dataset) => set.name || battleForme(set, dataset);
 
 /** The damaging move with the highest max roll. */
 export function bestMove(moves: MoveCalc[]): MoveCalc | null {
