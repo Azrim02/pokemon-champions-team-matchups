@@ -1,5 +1,5 @@
 import type { Dataset, PokemonSet } from '../types';
-import { battleForme, label } from '../lib/format';
+import { battleForme } from '../lib/format';
 import { TypeBadge } from './TypeBadge';
 import { Sprite } from './Sprite';
 import type { SavedTeam } from '../teams';
@@ -41,7 +41,7 @@ export function TeamPanel({ text, onText, sets, problems, dataset, teams, onLoad
             return (
               <li key={i}>
                 <Sprite species={forme} dataset={dataset} size={36} />
-                <span className="roster-name">{label(s)}</span>
+                <span className="roster-name">{s.name || s.species}</span>
                 {forme !== s.species && <span className="tag">{forme}</span>}
                 <span className="types">{species?.types.map(t => <TypeBadge key={t} type={t} />)}</span>
               </li>

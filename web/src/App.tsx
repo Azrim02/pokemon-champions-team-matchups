@@ -45,7 +45,7 @@ function fieldSummary(c: UiConditions) {
     s.isAuroraVeil && 'Aurora Veil', s.isHelpingHand && 'Helping Hand', s.isFriendGuard && 'Friend Guard',
   ].filter(Boolean).map(x => `${x} (${who})`);
   return [
-    c.gameType, c.weather, c.terrain && `${c.terrain} Terrain`, c.trickRoom && 'Trick Room', c.isGravity && 'Gravity',
+    c.gameType, c.weather, c.autoWeather && 'Weather from setters', c.terrain && `${c.terrain} Terrain`, c.trickRoom && 'Trick Room', c.isGravity && 'Gravity',
     ...sides(c.mySide, 'you'), ...sides(c.oppSide, 'them'),
   ].filter(Boolean).join(' · ');
 }
@@ -106,6 +106,7 @@ export function App() {
   const conditions = useMemo<Conditions>(() => ({
     gameType: cond.gameType,
     weather: cond.weather || undefined,
+    autoWeather: !!cond.autoWeather,
     terrain: cond.terrain || undefined,
     isGravity: cond.isGravity,
     mySide: cond.mySide,

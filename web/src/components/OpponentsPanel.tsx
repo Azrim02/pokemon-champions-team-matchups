@@ -58,9 +58,9 @@ export function OpponentsPanel({ value, onChange, usageFiles, usage, opponents, 
             <li key={i}>
               <Sprite species={battleForme(s, dataset)} dataset={dataset} size={36} />
               <div>
-              <strong>{s.species}</strong>{s.usage && <span className="muted">{pct(s.usage.usagePct)}</span>}
+              <strong>{battleForme(s, dataset)}</strong>{s.usage && <span className="muted">{pct(s.usage.usagePct)}</span>}
               <div className="small">
-                {s.item || 'No item'}<span className="muted">{pct(s.usage?.itemPct)}</span> · {s.ability}<span className="muted">{pct(s.usage?.abilityPct)}</span>
+                {s.item || 'No item'}<span className="muted">{pct(s.usage?.itemPct)}</span> · {s.usage?.battleAbility ?? s.ability}<span className="muted">{pct(s.usage ? s.usage.battleAbilityPct : null)}</span>
               </div>
               <div className="small muted">
                 {s.nature} {Object.values(s.evs).join('/')}{pct(s.usage?.spreadPct)}

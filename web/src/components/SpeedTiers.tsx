@@ -7,8 +7,8 @@ interface Props { myTeam: PokemonSet[]; opponents: PokemonSet[]; result: CalcRes
 /** Move order, using the same tie-numbering as speedTiers() in src/speed.js. */
 export function SpeedTiers({ myTeam, opponents, result, trickRoom, dataset }: Props) {
   const rows = [
-    ...myTeam.map((s, i) => ({ label: label(s), forme: battleForme(s, dataset), group: 'mine', speed: result.mySpeeds[i] })),
-    ...opponents.map((s, j) => ({ label: label(s), forme: battleForme(s, dataset), group: 'theirs', speed: result.oppSpeeds[j] })),
+    ...myTeam.map((s, i) => ({ label: label(s, dataset), forme: battleForme(s, dataset), group: 'mine', speed: result.mySpeeds[i] })),
+    ...opponents.map((s, j) => ({ label: label(s, dataset), forme: battleForme(s, dataset), group: 'theirs', speed: result.oppSpeeds[j] })),
   ].filter((r): r is { label: string; forme: string; group: string; speed: number } => r.speed != null);
   rows.sort((a, b) => (trickRoom ? a.speed - b.speed : b.speed - a.speed) || a.label.localeCompare(b.label));
   const max = Math.max(1, ...rows.map(r => r.speed));

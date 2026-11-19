@@ -38,7 +38,7 @@ function DamageCards({ myTeam, opponents, result, trickRoom, dataset }: Props) {
         {myTeam.map((m, k) => (
           <button key={k} type="button" role="tab" aria-selected={k === i} onClick={() => { setPick(k); setOpen(null); }}>
             <Sprite species={battleForme(m, dataset)} dataset={dataset} size={44} />
-            <span>{label(m)}</span>
+            <span>{label(m, dataset)}</span>
           </button>
         ))}
       </div>
@@ -57,7 +57,7 @@ function DamageCards({ myTeam, opponents, result, trickRoom, dataset }: Props) {
               <button type="button" className="dmg-card" aria-expanded={isOpen} onClick={() => setOpen(isOpen ? null : j)}>
                 <Sprite species={battleForme(o, dataset)} dataset={dataset} size={44} />
                 <span className="dmg-name">
-                  <strong>{label(o)}</strong>
+                  <strong>{label(o, dataset)}</strong>
                   {spd && <span className={`spd ${spd}`}>{SPEED_MARK[spd]}</span>}
                 </span>
                 {p.error ? <span className="warn small">{p.error}</span> : (
@@ -69,8 +69,9 @@ function DamageCards({ myTeam, opponents, result, trickRoom, dataset }: Props) {
               </button>
               {isOpen && !p.error && (
                 <div className="detail">
-                  <MoveList title={`Your ${label(me)} → their ${label(o)}`} moves={p.myMoves} dir="out" />
-                  <MoveList title={`Their ${label(o)} → your ${label(me)}`} moves={p.theirMoves} dir="in" />
+                  {p.setterWeather && <p className="muted small">In {p.setterWeather}, from a weather setter.</p>}
+                  <MoveList title={`Your ${label(me, dataset)} → their ${label(o, dataset)}`} moves={p.myMoves} dir="out" />
+                  <MoveList title={`Their ${label(o, dataset)} → your ${label(me, dataset)}`} moves={p.theirMoves} dir="in" />
                 </div>
               )}
             </li>
@@ -99,7 +100,7 @@ function DamageGrid({ myTeam, opponents, result, trickRoom, dataset }: Props) {
               {opponents.map((o, j) => (
                 <th key={j} scope="col" className="col-head">
                   <Sprite species={battleForme(o, dataset)} dataset={dataset} />
-                  <span>{label(o)}</span>
+                  <span>{label(o, dataset)}</span>
                 </th>
               ))}
             </tr>
@@ -107,7 +108,7 @@ function DamageGrid({ myTeam, opponents, result, trickRoom, dataset }: Props) {
           <tbody>
             {myTeam.map((m, i) => (
               <tr key={i}>
-                <th scope="row"><span className="who"><Sprite species={battleForme(m, dataset)} dataset={dataset} />{label(m)}</span></th>
+                <th scope="row"><span className="who"><Sprite species={battleForme(m, dataset)} dataset={dataset} />{label(m, dataset)}</span></th>
                 {opponents.map((_, j) => {
                   const p = result.grid[i]?.[j];
                   if (!p) return <td key={j} />;
@@ -120,10 +121,12 @@ function DamageGrid({ myTeam, opponents, result, trickRoom, dataset }: Props) {
                   return (
                     <td key={j} className={active ? 'active' : undefined}>
                       <button type="button" className="cell" onClick={() => setSel(active ? null : [i, j])}
-                        aria-label={`${label(m)} vs ${label(opponents[j])}: details`}>
+                        aria-label={`${label(m, dataset)} vs ${label(opponents[j], dataset)}: details`}
+                        title={p.setterWeather ? `In ${p.setterWeather} (weather setter)` : undefined}>
                         <span className={`hit out ${band(mine)}`}>{mine ? `${mine.move} ${pctRange(mine)}` : '—'}</span>
                         <span className={`hit in ${band(theirs)}`}>{theirs ? `${theirs.move} ${pctRange(theirs)}` : '—'}</span>
                         {spd && <span className={`spd ${spd}`}>{SPEED_MARK[spd]}</span>}
+                        {p.setterWeather && <span className="spd">{p.setterWeather}</span>}
                       </button>
                     </td>
                   );
@@ -136,8 +139,9 @@ function DamageGrid({ myTeam, opponents, result, trickRoom, dataset }: Props) {
 
       {sel && pair && (
         <div className="detail">
-          <MoveList title={`Your ${label(myTeam[sel[0]])} → their ${label(opponents[sel[1]])}`} moves={pair.myMoves} dir="out" />
-          <MoveList title={`Their ${label(opponents[sel[1]])} → your ${label(myTeam[sel[0]])}`} moves={pair.theirMoves} dir="in" />
+          {pair.setterWeather && <p className="muted small">In {pair.setterWeather}, from a weather setter.</p>}
+          <MoveList title={`Your ${label(myTeam[sel[0]], dataset)} → their ${label(opponents[sel[1]], dataset)}`} moves={pair.myMoves} dir="out" />
+          <MoveList title={`Their ${label(opponents[sel[1]], dataset)} → your ${label(myTeam[sel[0]], dataset)}`} moves={pair.theirMoves} dir="in" />
         </div>
       )}
     </div>

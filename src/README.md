@@ -20,6 +20,7 @@ const calcs = calcMatchup(myTeam, opponents, dataset, { weather: 'Sun', oppSide:
 | `speed.js` | Final Speed and speed tiers using the calc's own Speed rules (Tailwind, Scarf, paralysis, weather abilities, Trick Room order) |
 | `typeMatrix.js` | Team defensive matrix (including immunity and resistance abilities) and offensive coverage against opponents |
 | `opponents.js` | Likely opponent sets from the usage summary: top item, ability and moves, plus the top N spreads |
+| `weather.js` | Weather from abilities: a set's battle ability (its Mega's, if it holds the stone), the weather it sets, and which weather a one-on-one pairing ends up in when both sides set one |
 
 ## Conventions
 
@@ -27,7 +28,7 @@ const calcs = calcMatchup(myTeam, opponents, dataset, { weather: 'Sun', oppSide:
   in `set.state = { boosts, status, curHPPct, abilityOn, mega }`.
 - **Megas:** a set holding its Mega Stone is calc'd as the Mega forme, unless `state.mega === false`.
   Usage stats list Megas by their Mega name; `opponents.js` registers them as the base forme
-  holding the stone.
+  holding the stone. The Mega's own ability (e.g. Drought) is kept in `set.usage.battleAbility`.
 - **Conditions** default to Doubles, so spread moves get the 0.75× reduction. `mySide` and
   `oppSide` are swapped automatically when the opponent is attacking.
 - **Likely sets** combine the most common item, ability, spread and moves, each taken separately
