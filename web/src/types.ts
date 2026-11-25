@@ -151,6 +151,14 @@ export interface DefenseMatrix {
   rows: { type: string; multipliers: number[]; weak: number; resist: number; immune: number }[];
 }
 
+/** Members are indexes into DefenseMatrix.members. */
+export interface DefensiveCore { members: number[]; holes: { member: number; type: string }[] }
+export interface DefensiveCores {
+  weaknesses: string[][];
+  links: { of: number; by: number; types: string[] }[];
+  cores: DefensiveCore[];
+}
+
 export interface CoverageCell { attacker: string; defender: string; best: number | null; move: string | null }
 
 // Worker protocol

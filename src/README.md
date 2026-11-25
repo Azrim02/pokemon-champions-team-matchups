@@ -19,6 +19,7 @@ const calcs = calcMatchup(myTeam, opponents, dataset, { weather: 'Sun', oppSide:
 | `calc.js` | `@smogon/calc` Champions mechanics (gen 0). `calcMatchup` gives raw calc lists for every pairing, both directions: damage and % range, all 16 rolls, KO chance, description |
 | `speed.js` | Final Speed and speed tiers using the calc's own Speed rules (Tailwind, Scarf, paralysis, weather abilities, Trick Room order) |
 | `typeMatrix.js` | Team defensive matrix (including immunity and resistance abilities) and offensive coverage against opponents |
+| `cores.js` | Defensive cores: which members cover each other's weaknesses, and the pairs and trios that cover all (or most) of their own |
 | `opponents.js` | Likely opponent sets from the usage summary: top item, ability and moves, plus the top N spreads |
 | `weather.js` | Weather from abilities: a set's battle ability (its Mega's, if it holds the stone), the weather it sets, and which weather a one-on-one pairing ends up in when both sides set one |
 
