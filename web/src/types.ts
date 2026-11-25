@@ -9,6 +9,8 @@ export interface SetState {
   curHPPct?: number;
   abilityOn?: boolean;
   mega?: boolean;
+  /** Overrides the side's alliesFainted for this set */
+  alliesFainted?: number;
 }
 
 export interface SetUsage {
@@ -43,6 +45,8 @@ export interface SideConditions {
   isAuroraVeil?: boolean;
   isHelpingHand?: boolean;
   isFriendGuard?: boolean;
+  /** Fainted Pokémon on this side: powers up Last Respects and Supreme Overlord */
+  alliesFainted?: number;
 }
 
 export interface Conditions {
@@ -66,6 +70,10 @@ export interface MoveCalc {
   rolls: number[];
   koChance: string;
   desc: string;
+  /** Only for moves that scale with fainted allies: the count used for this calc */
+  alliesFainted?: number;
+  /** Only for moves that scale with fainted allies: the damage at 0 to 3 of them */
+  byFaints?: { alliesFainted: number; percent: [number, number] | null; koChance: string }[];
 }
 
 export interface Species {

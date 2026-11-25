@@ -87,3 +87,31 @@ test('Aegislash resolves to the calc\'s Aegislash-Shield', () => {
   const aegi = set('Aegislash', { ability: 'Stance Change', moves: ['Shadow Ball'] });
   assert.equal(toCalcPokemon(aegi, dataset).name, 'Aegislash-Shield');
 });
+
+const basc = set('Basculegion', {
+  item: 'Mystic Water', ability: 'Adaptability', nature: 'Adamant',
+  evs: { hp: 2, atk: 32, spe: 32 }, moves: ['Last Respects', 'Wave Crash'],
+});
+
+test('Last Respects gains 50 base power per fainted ally, from the attacker side', () => {
+  const at = n => byMove(calcSetVsSet(basc, chomp, dataset, { mySide: { alliesFainted: n } }))['Last Respects'];
+  assert.equal(at(0).basePower, 50);
+  assert.equal(at(2).basePower, 150);
+  assert.ok(at(2).damage[1] > at(1).damage[1] && at(1).damage[1] > at(0).damage[1]);
+  // The opponent's faints don't power up my Last Respects.
+  const theirs = byMove(calcSetVsSet(basc, chomp, dataset, { oppSide: { alliesFainted: 3 } }))['Last Respects'];
+  assert.equal(theirs.basePower, 50);
+  // set.state overrides the side.
+  const own = byMove(calcSetVsSet({ ...basc, state: { alliesFainted: 3 } }, chomp, dataset))['Last Respects'];
+  assert.equal(own.basePower, 200);
+});
+
+test('Last Respects lists its damage at 0 to 3 fainted allies; other moves do not', () => {
+  const res = byMove(calcSetVsSet(basc, chomp, dataset, { mySide: { alliesFainted: 1 } }));
+  const lr = res['Last Respects'];
+  assert.equal(lr.alliesFainted, 1);
+  assert.deepEqual(lr.byFaints.map(b => b.alliesFainted), [0, 1, 2, 3]);
+  assert.deepEqual(lr.byFaints[1].percent, lr.percent);
+  assert.ok(lr.byFaints[3].percent[0] > lr.byFaints[0].percent[1]);
+  assert.equal(res['Wave Crash'].byFaints, undefined);
+});

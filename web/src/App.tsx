@@ -3,7 +3,7 @@ import {
   createDataset, exportTeam, likelyTeam, parseTeam, teamCoverage, teamDefense, topThreats, validateTeam,
 } from './core';
 import { loadDex, loadUsage, usageFiles } from './data';
-import { savedTeams } from './teams';
+import { defaultTeam, savedTeams } from './teams';
 import type { Conditions, Dataset, DexJson, Meta, PokemonSet, UsageSummary } from './types';
 import { useStored } from './lib/storage';
 import { useCalcWorker } from './lib/useCalcWorker';
@@ -14,11 +14,9 @@ import { DamageMatrix } from './components/DamageMatrix';
 import { SpeedTiers } from './components/SpeedTiers';
 import { CoverageTable, DefenseTable } from './components/TypeTables';
 import { Collapsible } from './components/Collapsible';
-import { Sprite } from './components/Sprite';
-import { battleForme } from './lib/format';
 import { STACKED, useMediaQuery } from './lib/useMediaQuery';
 
-const TABS = ['Damage', 'Speed', 'Defense', 'Coverage'] as const;
+const TABS = ['Team', 'Damage', 'Speed', 'Defense', 'Coverage'] as const;
 type Tab = (typeof TABS)[number];
 
 /** A legal sample team: the most used Pokémon, skipping repeats of a species or item. */
@@ -43,6 +41,7 @@ function fieldSummary(c: UiConditions) {
   const sides = (s: UiConditions['mySide'], who: string) => [
     s.isTailwind && 'Tailwind', s.isReflect && 'Reflect', s.isLightScreen && 'Light Screen',
     s.isAuroraVeil && 'Aurora Veil', s.isHelpingHand && 'Helping Hand', s.isFriendGuard && 'Friend Guard',
+    s.alliesFainted && `${s.alliesFainted} fainted`,
   ].filter(Boolean).map(x => `${x} (${who})`);
   return [
     c.gameType, c.weather, c.autoWeather && 'Weather from setters', c.terrain && `${c.terrain} Terrain`, c.trickRoom && 'Trick Room', c.isGravity && 'Gravity',
@@ -56,12 +55,12 @@ export function App() {
   const [usage, setUsage] = useState<UsageSummary | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  const [teamText, setTeamText] = useStored('team', savedTeams[0]?.text ?? '');
+  const [teamText, setTeamText, teamSaved] = useStored('team', defaultTeam?.text ?? '');
   const [cond, setCond] = useStored<UiConditions>('conditions', DEFAULT_CONDITIONS);
   const [opp, setOpp] = useStored<OppSettings>('opponents', {
     mode: 'top', topN: 12, custom: '', usageKey: usageFiles[0]?.key ?? '',
   });
-  const [tab, setTab] = useStored<Tab>('tab', 'Damage');
+  const [tab, setTab] = useStored<Tab>('tab', 'Team');
 
   useEffect(() => {
     loadDex().then(r => { setDex(r.dex); setMeta(r.meta); }).catch(e => setLoadError(String(e.message ?? e)));
@@ -127,7 +126,7 @@ export function App() {
     return <main className="center"><p className="warn">No usage summary in data/usage/. Run <code>npm run data:usage</code>.</p></main>;
   }
 
-  const empty = !myTeam.length ? 'Paste a team to see matchups.' : !opponents.length ? 'No opponents selected.' : null;
+  const empty = !myTeam.length ? 'Add a team in the Team tab to see matchups.' : !opponents.length ? 'No opponents selected.' : null;
   // Results lag inputs while the worker runs; only show them once they match the current grid.
   const fresh = calc.result && calc.result.grid.length === myTeam.length
     && (calc.result.grid[0]?.length ?? 0) === opponents.length ? calc.result : null;
@@ -142,57 +141,55 @@ export function App() {
         </p>
       </header>
 
-      <aside className="side">
-        <Collapsible enabled={stacked} title="Your team" summary={
-          <>
-            <span className="mini-team">
-              {myTeam.map((s, i) => <Sprite key={i} species={battleForme(s, dataset)} dataset={dataset} size={28} />)}
-            </span>
-            {problems.length ? <span className="warn">{problems.length} issue{problems.length > 1 ? 's' : ''}</span> : null}
-          </>
-        }>
-        <TeamPanel text={teamText} onText={setTeamText} sets={parsed} problems={problems} dataset={dataset}
-          teams={savedTeams}
-          onLoad={id => {
-            if (id === 'usage') { if (usage) setTeamText(sampleTeam(usage, dataset)); return; }
-            const t = savedTeams.find(x => x.id === id);
-            if (t) setTeamText(t.text);
-          }} />
-        </Collapsible>
-        <Collapsible enabled={stacked} title="Field" summary={fieldSummary(cond)}>
-          <ConditionsPanel value={cond} onChange={setCond} />
-        </Collapsible>
-        <Collapsible enabled={stacked} title="Opponents" summary={
-          opp.mode === 'top' ? `Top ${opp.topN} by usage` : `Team preview · ${opponents.length}`
-        }>
-          <OpponentsPanel value={opp} onChange={setOpp} usageFiles={usageFiles} usage={usage}
-            opponents={opponents} missing={missing} dataset={dataset} />
-        </Collapsible>
-      </aside>
+      <nav className="tabs" role="tablist">
+        {TABS.map(t => (
+          <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}>{t}</button>
+        ))}
+        <span className={`status ${calc.pending ? 'busy' : ''}`} aria-live="polite">
+          {calc.pending ? 'Calculating…' : calc.error ? `Calc error: ${calc.error}` : ''}
+        </span>
+      </nav>
 
-      <main className="main">
-        <nav className="tabs" role="tablist">
-          {TABS.map(t => (
-            <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}>{t}</button>
-          ))}
-          <span className={`status ${calc.pending ? 'busy' : ''}`} aria-live="polite">
-            {calc.pending ? 'Calculating…' : calc.error ? `Calc error: ${calc.error}` : ''}
-          </span>
-        </nav>
+      {tab === 'Team' ? (
+        <main className="main">
+          <TeamPanel text={teamText} onText={setTeamText} saved={teamSaved} sets={parsed} problems={problems}
+            dataset={dataset} teams={savedTeams}
+            onLoad={id => {
+              if (id === 'usage') { if (usage) setTeamText(sampleTeam(usage, dataset)); return; }
+              const t = savedTeams.find(x => x.id === id);
+              if (t) setTeamText(t.text);
+            }} />
+        </main>
+      ) : (
+        <div className="layout">
+          <aside className="side">
+            <Collapsible enabled={stacked} title="Field" summary={fieldSummary(cond)}>
+              <ConditionsPanel value={cond} onChange={setCond} />
+            </Collapsible>
+            <Collapsible enabled={stacked} title="Opponents" summary={
+              opp.mode === 'top' ? `Top ${opp.topN} by usage` : `Team preview · ${opponents.length}`
+            }>
+              <OpponentsPanel value={opp} onChange={setOpp} usageFiles={usageFiles} usage={usage}
+                opponents={opponents} missing={missing} dataset={dataset} />
+            </Collapsible>
+          </aside>
 
-        {empty ? <p className="muted pad">{empty}</p> : (
-          <div className={`view ${calc.pending ? 'stale' : ''}`}>
-            {tab === 'Damage' && (fresh
-              ? <DamageMatrix myTeam={myTeam} opponents={opponents} result={fresh} trickRoom={cond.trickRoom} dataset={dataset} />
-              : <p className="muted pad">Calculating…</p>)}
-            {tab === 'Speed' && (fresh
-              ? <SpeedTiers myTeam={myTeam} opponents={opponents} result={fresh} trickRoom={cond.trickRoom} dataset={dataset} />
-              : <p className="muted pad">Calculating…</p>)}
-            {tab === 'Defense' && defense && <DefenseTable matrix={defense} myTeam={myTeam} dataset={dataset} />}
-            {tab === 'Coverage' && coverage && <CoverageTable myTeam={myTeam} opponents={opponents} cells={coverage} dataset={dataset} />}
-          </div>
-        )}
-      </main>
+          <main className="main">
+            {empty ? <p className="muted pad">{empty}</p> : (
+              <div className={`view ${calc.pending ? 'stale' : ''}`}>
+                {tab === 'Damage' && (fresh
+                  ? <DamageMatrix myTeam={myTeam} opponents={opponents} result={fresh} trickRoom={cond.trickRoom} dataset={dataset} />
+                  : <p className="muted pad">Calculating…</p>)}
+                {tab === 'Speed' && (fresh
+                  ? <SpeedTiers myTeam={myTeam} opponents={opponents} result={fresh} trickRoom={cond.trickRoom} dataset={dataset} />
+                  : <p className="muted pad">Calculating…</p>)}
+                {tab === 'Defense' && defense && <DefenseTable matrix={defense} myTeam={myTeam} dataset={dataset} />}
+                {tab === 'Coverage' && coverage && <CoverageTable myTeam={myTeam} opponents={opponents} cells={coverage} dataset={dataset} />}
+              </div>
+            )}
+          </main>
+        </div>
+      )}
     </div>
   );
 }

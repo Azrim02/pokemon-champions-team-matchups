@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import type { CalcResult, Dataset, MoveCalc, PokemonSet } from '../types';
 import { band, battleForme, bestMove, compareSpeed, label, pctRange } from '../lib/format';
 import { Sprite } from './Sprite';
@@ -155,12 +155,38 @@ function MoveList({ title, moves, dir }: { title: string; moves: MoveCalc[]; dir
       <table>
         <tbody>
           {moves.map((m, k) => (
-            <tr key={k}>
-              <td><TypeBadge type={m.type} /></td>
-              <td>{m.move}</td>
-              <td className={`num hit ${dir} ${band(m)}`}>{m.category === 'Status' ? 'status' : pctRange(m)}</td>
-              <td className="small">{m.koChance}</td>
-            </tr>
+            <Fragment key={k}>
+              <tr>
+                <td><TypeBadge type={m.type} /></td>
+                <td>{m.move}{m.byFaints && <span className="muted small"> ({m.basePower} BP)</span>}</td>
+                <td className={`num hit ${dir} ${band(m)}`}>{m.category === 'Status' ? 'status' : pctRange(m)}</td>
+                <td className="small">{m.koChance}</td>
+              </tr>
+              {m.byFaints && (
+                <tr className="by-faints">
+                  <td />
+                  <td colSpan={3}>
+                    <table aria-label={`${m.move} damage by fainted allies`}>
+                      <thead><tr><th scope="row">Fainted</th>{m.byFaints.map(b => <th key={b.alliesFainted} scope="col">{b.alliesFainted}</th>)}</tr></thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Damage</th>
+                          {m.byFaints.map(b => {
+                            const row = { ...m, percent: b.percent };
+                            return (
+                              <td key={b.alliesFainted} title={b.koChance}
+                                className={`num hit ${dir} ${band(row)}${b.alliesFainted === m.alliesFainted ? ' current' : ''}`}>
+                                {pctRange(row)}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              )}
+            </Fragment>
           ))}
         </tbody>
       </table>
