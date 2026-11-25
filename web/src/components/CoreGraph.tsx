@@ -8,9 +8,12 @@ import { Sprite } from './Sprite';
 import { TypeBadge } from './TypeBadge';
 
 const MAX_CORES = 6;
+const STRAND_GAP = 4;
 const clampZoom = (z: number) => Math.max(0.5, Math.min(2.5, z));
 
-type Focus = { kind: 'node'; i: number } | { kind: 'core'; i: number } | null;
+type Focus = { kind: 'node'; i: number } | { kind: 'core'; i: number } | { kind: 'type'; type: string } | null;
+
+interface Edge extends Link { strands: { of: number; type: string }[] }
 
 const Types = ({ list }: { list: string[] }) => <span className="type-list">{list.map(t => <TypeBadge key={t} type={t} />)}</span>;
 
@@ -19,14 +22,14 @@ export function CoreGraph({ matrix, myTeam, dataset }: { matrix: DefenseMatrix; 
   const names = matrix.members;
   const shown = cores.slice(0, MAX_CORES);
 
-  // One edge per pair; mutual when each covers something for the other.
+  // One edge per pair, with a strand for each weakness one covers for the other.
   const edges = useMemo(() => {
-    const byPair = new Map<string, Link & { aCovers: boolean; bCovers: boolean }>();
+    const byPair = new Map<string, Edge>();
     for (const l of links) {
       const a = Math.min(l.of, l.by), b = Math.max(l.of, l.by);
-      const e = byPair.get(`${a}-${b}`) ?? { a, b, weight: 0, aCovers: false, bCovers: false };
+      const e = byPair.get(`${a}-${b}`) ?? { a, b, weight: 0, strands: [] };
       e.weight += l.types.length;
-      if (l.by === a) e.aCovers = true; else e.bCovers = true;
+      e.strands.push(...l.types.map(type => ({ of: l.of, type })));
       byPair.set(`${a}-${b}`, e);
     }
     return [...byPair.values()];
@@ -62,12 +65,13 @@ export function CoreGraph({ matrix, myTeam, dataset }: { matrix: DefenseMatrix; 
   const [focus, setFocus] = useState<Focus>(null);
   const [hover, setHover] = useState<number | null>(null);
   useEffect(() => { setFocus(null); setHover(null); }, [matrix]);
-  const active: Focus = hover != null && focus?.kind !== 'core' ? { kind: 'node', i: hover } : focus;
+  const active: Focus = hover != null && (!focus || focus.kind === 'node') ? { kind: 'node', i: hover } : focus;
   const core: DefensiveCore | undefined = active?.kind === 'core' ? cores[active.i] : undefined;
-  const lit = (i: number) => !active || (core
+  const lit = (i: number) => !active || (active.kind === 'type' ? weaknesses[i].includes(active.type)
+    || links.some(l => l.by === i && l.types.includes(active.type)) : core
     ? core.members.includes(i)
     : active.i === i || edges.some(e => (e.a === i && e.b === active.i) || (e.b === i && e.a === active.i)));
-  const edgeLit = (e: Link) => !active || (core
+  const strandLit = (e: Link, type: string) => !active || (active.kind === 'type' ? active.type === type : core
     ? core.members.includes(e.a) && core.members.includes(e.b)
     : e.a === active.i || e.b === active.i);
 
@@ -108,37 +112,51 @@ export function CoreGraph({ matrix, myTeam, dataset }: { matrix: DefenseMatrix; 
     onPointerDown: start(i), onPointerMove: (e: RPointerEvent) => { if (e.buttons) move(e); }, onPointerUp: end, onPointerCancel: end,
   });
 
+  const covered = (i: number, type: string) => links.some(l => l.of === i && l.types.includes(type));
+  const graphTypes = matrix.rows.map(r => r.type).filter(t => weaknesses.some(w => w.includes(t)));
+
   const node = active?.kind === 'node' ? active.i : null;
+  const uncovered = node == null ? [] : weaknesses[node].filter(t => !covered(node, t));
   const ARROWS: Record<string, [number, number]> = { ArrowLeft: [-24, 0], ArrowRight: [24, 0], ArrowUp: [0, -24], ArrowDown: [0, 24] };
 
   return (
     <section className="cores">
       <p className="legend">
-        Lines join members that cover each other's weaknesses; thicker means more types. A dashed
-        arrow points to the member being covered. Drag a Pokémon to move it, drag the background to pan.
+        Each line is one weakness covered, in the colour of its type; the dot is at the member being
+        covered. Rings show a Pokémon's weaknesses: thick if a teammate covers it, thin if nobody does.
+        Drag a Pokémon to move it, drag the background to pan.
       </p>
+      <div className="type-key" role="group" aria-label="Highlight a weakness">
+        {graphTypes.map(t => (
+          <button key={t} type="button" aria-pressed={focus?.kind === 'type' && focus.type === t}
+            onClick={() => setFocus(f => (f?.kind === 'type' && f.type === t ? null : { kind: 'type', type: t }))}>
+            <TypeBadge type={t} />
+          </button>
+        ))}
+      </div>
       <div className="cores-grid">
         <div className="graph" ref={frame} {...handlers(null)}>
           <div className="world" style={{ transform: `translate(${view.x}px, ${view.y}px) scale(${view.zoom})` }}>
             <svg aria-hidden="true">
-              <defs>
-                <marker id="core-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-                  <path d="M0 0L8 4L0 8z" />
-                </marker>
-              </defs>
               {edges.map(e => {
-                const mutual = e.aCovers && e.bCovers;
-                // One-way edges run from the member that covers to the one it covers.
-                const p = graph.points[e.aCovers ? e.a : e.b], q = graph.points[e.aCovers ? e.b : e.a];
+                const p = graph.points[e.a], q = graph.points[e.b];
                 if (!p || !q) return null;
                 const d = Math.hypot(q.x - p.x, q.y - p.y) || 1;
-                const back = mutual ? 0 : Math.min(34, d / 2);
-                return (
-                  <line key={`${e.a}-${e.b}`} x1={p.x} y1={p.y}
-                    x2={q.x - ((q.x - p.x) / d) * back} y2={q.y - ((q.y - p.y) / d) * back}
-                    className={`${mutual ? 'mutual' : 'one-way'} ${edgeLit(e) ? (active ? 'lit' : '') : 'dim'}`}
-                    strokeWidth={1 + Math.min(e.weight, 8) * 0.45} markerEnd={mutual ? undefined : 'url(#core-arrow)'} />
-                );
+                const ux = (q.x - p.x) / d, uy = (q.y - p.y) / d;
+                return e.strands.map((s, k) => {
+                  // Parallel strands, one per type, with a dot at the end of the member it covers.
+                  const off = (k - (e.strands.length - 1) / 2) * STRAND_GAP;
+                  const ox = -uy * off, oy = ux * off;
+                  const [end, dir] = s.of === e.a ? [p, 1] : [q, -1];
+                  // Below a node, the dot has to clear its name.
+                  const dist = Math.min(d / 2, uy * dir > 0.5 ? 66 : 44);
+                  return (
+                    <g key={`${e.a}-${e.b}-${s.of}-${s.type}`} className={`strand type-${s.type.toLowerCase()} ${strandLit(e, s.type) ? '' : 'dim'}`}>
+                      <line x1={p.x + ox} y1={p.y + oy} x2={q.x + ox} y2={q.y + oy} />
+                      <circle cx={end.x + ox + ux * dir * dist} cy={end.y + oy + uy * dir * dist} r={3.5} />
+                    </g>
+                  );
+                });
               })}
             </svg>
             {names.map((m, i) => {
@@ -152,7 +170,15 @@ export function CoreGraph({ matrix, myTeam, dataset }: { matrix: DefenseMatrix; 
                   onPointerEnter={e => { if (e.pointerType === 'mouse') setHover(i); }} onPointerLeave={() => setHover(null)}
                   onClick={() => { if (!drag.current?.moved) setFocus(f => (f?.kind === 'node' && f.i === i ? null : { kind: 'node', i })); }}
                   onKeyDown={e => { const a = ARROWS[e.key]; if (a) { e.preventDefault(); graph.nudge(i, ...a); } }}>
-                  <span className="disc"><Sprite species={battleForme(myTeam[i], dataset)} dataset={dataset} size={48} /></span>
+                  <span className="disc">
+                    <svg className="ring" viewBox="0 0 64 64" aria-hidden="true">
+                      {weaknesses[i].map((t, k, all) => (
+                        <circle key={t} cx="32" cy="32" r="29" pathLength={100} className={`type-${t.toLowerCase()} ${covered(i, t) ? 'covered' : ''}`}
+                          strokeDasharray={`${100 / all.length - (all.length > 1 ? 2.5 : 0)} 100`} strokeDashoffset={(-k * 100) / all.length} />
+                      ))}
+                    </svg>
+                    <Sprite species={battleForme(myTeam[i], dataset)} dataset={dataset} size={48} />
+                  </span>
                   <span className="node-name">{m}</span>
                 </button>
               );
@@ -170,6 +196,7 @@ export function CoreGraph({ matrix, myTeam, dataset }: { matrix: DefenseMatrix; 
             <div className="node-detail" aria-live="polite">
               <h3>{names[node]}</h3>
               <p className="small">Weak to <Types list={weaknesses[node] ?? []} /></p>
+              {uncovered.length > 0 && <p className="small warn">Nobody covers <Types list={uncovered} /></p>}
               {links.some(l => l.of === node) && <>
                 <p className="muted small">Covered by</p>
                 <ul>{links.filter(l => l.of === node).map(l => <li key={l.by}>{names[l.by]} <Types list={l.types} /></li>)}</ul>
