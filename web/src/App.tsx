@@ -13,6 +13,7 @@ import { OpponentsPanel, type OppSettings } from './components/OpponentsPanel';
 import { DamageMatrix } from './components/DamageMatrix';
 import { SpeedTiers } from './components/SpeedTiers';
 import { CoverageTable, DefenseTable } from './components/TypeTables';
+import { CoreGraph } from './components/CoreGraph';
 import { Collapsible } from './components/Collapsible';
 import { STACKED, useMediaQuery } from './lib/useMediaQuery';
 
@@ -183,7 +184,10 @@ export function App() {
                 {tab === 'Speed' && (fresh
                   ? <SpeedTiers myTeam={myTeam} opponents={opponents} result={fresh} trickRoom={cond.trickRoom} dataset={dataset} />
                   : <p className="muted pad">Calculating…</p>)}
-                {tab === 'Defense' && defense && <DefenseTable matrix={defense} myTeam={myTeam} dataset={dataset} />}
+                {tab === 'Defense' && defense && <>
+                  <CoreGraph matrix={defense} myTeam={myTeam} dataset={dataset} />
+                  <DefenseTable matrix={defense} myTeam={myTeam} dataset={dataset} />
+                </>}
                 {tab === 'Coverage' && coverage && <CoverageTable myTeam={myTeam} opponents={opponents} cells={coverage} dataset={dataset} />}
               </div>
             )}
