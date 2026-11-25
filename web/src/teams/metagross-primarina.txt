@@ -1,0 +1,55 @@
+=== [Reg M-C] Metagross / Rillaboom / Primarina ===
+
+Metagross @ Metagrossite
+Ability: Clear Body
+EVs: 2 HP / 32 Atk / 32 Spe
+Jolly Nature
+- Psychic Fangs
+- Ice Punch
+- Stomping Tantrum
+- Protect
+
+Rillaboom @ Miracle Seed
+Ability: Grassy Surge
+EVs: 28 HP / 32 Atk / 6 Spe
+Adamant Nature
+- Fake Out
+- Grassy Glide
+- Wood Hammer
+- U-turn
+
+Garchomp @ Soft Sand
+Ability: Rough Skin
+EVs: 2 HP / 32 Atk / 32 Spe
+Jolly Nature
+- Dragon Claw
+- Rock Slide
+- Stomping Tantrum
+- Protect
+
+Volcarona @ Rocky Helmet
+Ability: Flame Body
+EVs: 32 HP / 16 Def / 8 SpA / 10 Spe
+Bold Nature
+- Heat Wave
+- Struggle Bug
+- Tailwind
+- Rage Powder
+
+Tyranitar @ Chople Berry
+Ability: Sand Stream
+EVs: 32 HP / 32 Atk / 2 SpD
+Adamant Nature
+- Rock Slide
+- Knock Off
+- Low Kick
+- Protect
+
+Primarina @ Leftovers
+Ability: Liquid Voice
+EVs: 32 HP / 2 Def / 32 SpA
+Modest Nature
+- Hyper Voice
+- Moonblast
+- Haze
+- Protect

@@ -228,6 +228,30 @@ label.block:has(input[type='number']) { flex-direction: row; align-items: center
 @media (max-width: 1100px) { .cores-grid { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 640px) { .graph { height: 380px; } }
 
+/* Play guide */
+.play { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+.play > h3 { margin: 4px 0 -6px; }
+.play .legend, .play p { margin: 0; }
+.play-stats { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; flex-wrap: wrap; }
+.play-stats strong { font-size: 1.4rem; }
+.play-cols { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); align-items: start; }
+.play-cols > * { min-width: 0; }
+.play-text { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.play-text .mine { color: var(--mine); }
+.play-moves { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 0.82rem; }
+.play-moves li { display: grid; grid-template-columns: minmax(0, 1fr) 80px 36px; gap: 8px; align-items: center; }
+.play-moves .bar { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.play-moves .bar span { display: block; height: 100%; background: var(--mine); }
+.play-pair { display: inline-flex; flex-wrap: wrap; gap: 2px 10px; }
+.play-table tbody th { position: static; font-weight: 400; }
+.play-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.play-chips li { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px 2px 4px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; }
+.play-arch { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.play-arch li { display: grid; gap: 4px; align-content: start; }
+.play-arch-head { display: flex; justify-content: space-between; gap: 8px; }
+.play-arch-head span { margin: 0; font-size: 0.85rem; white-space: nowrap; }
+.play summary { cursor: pointer; }
+
 /* Speed */
 .speed { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; max-width: 720px; }
 .speed li { display: grid; grid-template-columns: 32px minmax(100px, 180px) 1fr 48px; gap: 8px; align-items: center; padding: 3px 6px; border-radius: 4px; }
@@ -317,7 +341,7 @@ label.block:has(input[type='number']) { flex-direction: row; align-items: center
   /* 16px stops iOS zooming into form fields on focus */
   select, input[type='number'], textarea, .paste { font-size: 16px; }
   .tabs { gap: 0; }
-  .tabs button { padding: 12px 8px; }
+  .tabs button { padding: 12px 6px; font-size: 0.9rem; }
   .builder .paste { height: 45vh; }
   .checks label, .side-table input { min-height: 32px; }
   .side-table input { width: 22px; height: 22px; }

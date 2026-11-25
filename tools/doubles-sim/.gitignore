@@ -1,0 +1,9 @@
+results/state.json
+results/state.json.tmp
+results/progress.json
+results/run.log
+results/smoke-*
+results/refine-*
+results/final-*
+results/gauntlet-*
+results/revise-*

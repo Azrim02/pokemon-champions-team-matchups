@@ -1,0 +1,980 @@
+{
+ "id": "metagross-primarina",
+ "species": [
+  "Metagross",
+  "Rillaboom",
+  "Garchomp",
+  "Volcarona",
+  "Tyranitar",
+  "Primarina"
+ ],
+ "games": 2240,
+ "opponents": 280,
+ "overall": {
+  "usage": {
+   "win": 0.7,
+   "se": 0.017
+  },
+  "archetypes": {
+   "win": 0.652,
+   "se": 0.018
+  }
+ },
+ "sets": [
+  {
+   "species": "Metagross",
+   "item": "Metagrossite",
+   "moves": [
+    "Psychic Fangs",
+    "Ice Punch",
+    "Stomping Tantrum",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Rillaboom",
+   "item": "Miracle Seed",
+   "moves": [
+    "Fake Out",
+    "Grassy Glide",
+    "Wood Hammer",
+    "U-turn"
+   ]
+  },
+  {
+   "species": "Garchomp",
+   "item": "Soft Sand",
+   "moves": [
+    "Dragon Claw",
+    "Rock Slide",
+    "Stomping Tantrum",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Volcarona",
+   "item": "Rocky Helmet",
+   "moves": [
+    "Heat Wave",
+    "Struggle Bug",
+    "Tailwind",
+    "Rage Powder"
+   ]
+  },
+  {
+   "species": "Tyranitar",
+   "item": "Chople Berry",
+   "moves": [
+    "Rock Slide",
+    "Knock Off",
+    "Low Kick",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Primarina",
+   "item": "Leftovers",
+   "moves": [
+    "Hyper Voice",
+    "Moonblast",
+    "Haze",
+    "Protect"
+   ]
+  }
+ ],
+ "plan": [
+  "Turn 1: attack with the partner while Rillaboom uses Fake Out or Volcarona sets Tailwind. Protect the member the opponent wants to hit.",
+  "Middle: use Rage Powder to take single-target hits away from Metagross or Garchomp. Leave with U-turn to bring Fake Out back later.",
+  "Mega Metagross is the closer. Keep it healthy, and bring it in when its Fire, Ground, Dark and Ghost threats are weak or gone.",
+  "Against Trick Room, use Protect on both sides to use up its turns, then attack."
+ ],
+ "cautions": [
+  "Tyranitar's sand damages Volcarona, Rillaboom and Primarina. Don't bring it just for the numbers.",
+  "Grassy Terrain halves Earthquake and Bulldoze only. Stomping Tantrum and High Horsepower still do full damage.",
+  "With Ice Punch, Metagross has no strong hit on Fairies. Wear them down, or let Volcarona use Heat Wave.",
+  "There is no Intimidate, and Haze is the only answer to boosts."
+ ],
+ "mons": [
+  {
+   "species": "Metagross",
+   "role": "Mega attacker and closer. Psychic Fangs for Fighting types, Ice Punch for Dragons, Stomping Tantrum for Fire and Steel.",
+   "brought": 0.908,
+   "led": 0.438,
+   "won": 0.676,
+   "moves": [
+    {
+     "move": "Protect",
+     "share": 0.317
+    },
+    {
+     "move": "Psychic Fangs",
+     "share": 0.261
+    },
+    {
+     "move": "Stomping Tantrum",
+     "share": 0.227
+    },
+    {
+     "move": "Ice Punch",
+     "share": 0.196
+    }
+   ]
+  },
+  {
+   "species": "Rillaboom",
+   "role": "Fake Out, Grassy Glide priority and terrain. U-turn to pivot.",
+   "brought": 0.636,
+   "led": 0.324,
+   "won": 0.677,
+   "moves": [
+    {
+     "move": "Grassy Glide",
+     "share": 0.359
+    },
+    {
+     "move": "Wood Hammer",
+     "share": 0.233
+    },
+    {
+     "move": "Fake Out",
+     "share": 0.233
+    },
+    {
+     "move": "U-turn",
+     "share": 0.176
+    }
+   ]
+  },
+  {
+   "species": "Garchomp",
+   "role": "Fast Ground attacker. Rock Slide for Flying types and Charizard.",
+   "brought": 0.695,
+   "led": 0.313,
+   "won": 0.674,
+   "moves": [
+    {
+     "move": "Protect",
+     "share": 0.347
+    },
+    {
+     "move": "Stomping Tantrum",
+     "share": 0.345
+    },
+    {
+     "move": "Dragon Claw",
+     "share": 0.171
+    },
+    {
+     "move": "Rock Slide",
+     "share": 0.137
+    }
+   ]
+  },
+  {
+   "species": "Volcarona",
+   "role": "Tailwind and Rage Powder. Flame Body and Rocky Helmet punish contact.",
+   "brought": 0.743,
+   "led": 0.397,
+   "won": 0.691,
+   "moves": [
+    {
+     "move": "Heat Wave",
+     "share": 0.299
+    },
+    {
+     "move": "Tailwind",
+     "share": 0.296
+    },
+    {
+     "move": "Struggle Bug",
+     "share": 0.233
+    },
+    {
+     "move": "Rage Powder",
+     "share": 0.172
+    }
+   ]
+  },
+  {
+   "species": "Tyranitar",
+   "role": "Removes sun and rain with sand. Rock Slide and Knock Off.",
+   "brought": 0.428,
+   "led": 0.208,
+   "won": 0.675,
+   "moves": [
+    {
+     "move": "Protect",
+     "share": 0.37
+    },
+    {
+     "move": "Knock Off",
+     "share": 0.259
+    },
+    {
+     "move": "Rock Slide",
+     "share": 0.242
+    },
+    {
+     "move": "Low Kick",
+     "share": 0.129
+    }
+   ]
+  },
+  {
+   "species": "Primarina",
+   "role": "Spread Water damage and Moonblast. Immune to Dragon; Haze removes boosts.",
+   "brought": 0.589,
+   "led": 0.32,
+   "won": 0.67,
+   "moves": [
+    {
+     "move": "Moonblast",
+     "share": 0.376
+    },
+    {
+     "move": "Protect",
+     "share": 0.35
+    },
+    {
+     "move": "Hyper Voice",
+     "share": 0.252
+    },
+    {
+     "move": "Haze",
+     "share": 0.022
+    }
+   ]
+  }
+ ],
+ "leads": [
+  {
+   "pair": [
+    "Metagross",
+    "Rillaboom"
+   ],
+   "games": 333,
+   "win": 0.643
+  },
+  {
+   "pair": [
+    "Garchomp",
+    "Volcarona"
+   ],
+   "games": 237,
+   "win": 0.684
+  },
+  {
+   "pair": [
+    "Garchomp",
+    "Metagross"
+   ],
+   "games": 232,
+   "win": 0.703
+  },
+  {
+   "pair": [
+    "Primarina",
+    "Volcarona"
+   ],
+   "games": 210,
+   "win": 0.681
+  },
+  {
+   "pair": [
+    "Metagross",
+    "Volcarona"
+   ],
+   "games": 190,
+   "win": 0.658
+  },
+  {
+   "pair": [
+    "Metagross",
+    "Primarina"
+   ],
+   "games": 149,
+   "win": 0.725
+  },
+  {
+   "pair": [
+    "Primarina",
+    "Tyranitar"
+   ],
+   "games": 144,
+   "win": 0.722
+  },
+  {
+   "pair": [
+    "Tyranitar",
+    "Volcarona"
+   ],
+   "games": 140,
+   "win": 0.7
+  }
+ ],
+ "fours": [
+  {
+   "lead": [
+    "Garchomp",
+    "Volcarona"
+   ],
+   "back": [
+    "Metagross",
+    "Rillaboom"
+   ],
+   "games": 98,
+   "win": 0.745
+  },
+  {
+   "lead": [
+    "Primarina",
+    "Volcarona"
+   ],
+   "back": [
+    "Garchomp",
+    "Metagross"
+   ],
+   "games": 94,
+   "win": 0.596
+  },
+  {
+   "lead": [
+    "Metagross",
+    "Rillaboom"
+   ],
+   "back": [
+    "Garchomp",
+    "Volcarona"
+   ],
+   "games": 88,
+   "win": 0.693
+  },
+  {
+   "lead": [
+    "Metagross",
+    "Rillaboom"
+   ],
+   "back": [
+    "Garchomp",
+    "Primarina"
+   ],
+   "games": 80,
+   "win": 0.625
+  },
+  {
+   "lead": [
+    "Metagross",
+    "Volcarona"
+   ],
+   "back": [
+    "Garchomp",
+    "Rillaboom"
+   ],
+   "games": 73,
+   "win": 0.658
+  },
+  {
+   "lead": [
+    "Tyranitar",
+    "Volcarona"
+   ],
+   "back": [
+    "Garchomp",
+    "Metagross"
+   ],
+   "games": 70,
+   "win": 0.629
+  }
+ ],
+ "turn1": [
+  {
+   "mon": "Volcarona",
+   "move": "Tailwind",
+   "games": 336
+  },
+  {
+   "mon": "Primarina",
+   "move": "Moonblast",
+   "games": 274
+  },
+  {
+   "mon": "Metagross",
+   "move": "Ice Punch",
+   "games": 239
+  },
+  {
+   "mon": "Rillaboom",
+   "move": "Fake Out",
+   "games": 219
+  },
+  {
+   "mon": "Metagross",
+   "move": "Psychic Fangs",
+   "games": 195
+  },
+  {
+   "mon": "Metagross",
+   "move": "Protect",
+   "games": 193
+  },
+  {
+   "mon": "Garchomp",
+   "move": "Stomping Tantrum",
+   "games": 186
+  },
+  {
+   "mon": "Metagross",
+   "move": "Stomping Tantrum",
+   "games": 171
+  }
+ ],
+ "archetypes": [
+  {
+   "name": "Screens",
+   "win": 0.763,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Volcarona"
+     ],
+     "games": 21,
+     "win": 0.762
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 11,
+     "win": 0.636
+    },
+    {
+     "pair": [
+      "Garchomp",
+      "Volcarona"
+     ],
+     "games": 9,
+     "win": 0.778
+    }
+   ],
+   "note": "Pressure Grimmsnarl early. It leaves with Parting Shot, so attack the partner."
+  },
+  {
+   "name": "Sun",
+   "win": 0.738,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Primarina",
+      "Tyranitar"
+     ],
+     "games": 21,
+     "win": 0.952
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Volcarona"
+     ],
+     "games": 12,
+     "win": 0.417
+    },
+    {
+     "pair": [
+      "Garchomp",
+      "Volcarona"
+     ],
+     "games": 10,
+     "win": 0.9
+    }
+   ],
+   "note": "Bring Tyranitar or Garchomp for Rock Slide on Charizard, and keep Metagross away from Heat Wave."
+  },
+  {
+   "name": "Sand",
+   "win": 0.738,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 39,
+     "win": 0.641
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Volcarona"
+     ],
+     "games": 11,
+     "win": 0.727
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Primarina"
+     ],
+     "games": 9,
+     "win": 0.889
+    }
+   ],
+   "note": "Grassy Glide and Primarina's Water moves punish Ground and Rock types."
+  },
+  {
+   "name": "Trick Room",
+   "win": 0.713,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Primarina",
+      "Tyranitar"
+     ],
+     "games": 30,
+     "win": 0.767
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Rillaboom"
+     ],
+     "games": 15,
+     "win": 0.867
+    },
+    {
+     "pair": [
+      "Rillaboom",
+      "Volcarona"
+     ],
+     "games": 13,
+     "win": 0.538
+    }
+   ],
+   "note": "Hit the setter on turn 1. If Trick Room goes up, use Protect to use up its turns."
+  },
+  {
+   "name": "Snow / Aurora Veil",
+   "win": 0.7,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Tyranitar",
+      "Volcarona"
+     ],
+     "games": 21,
+     "win": 0.619
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Volcarona"
+     ],
+     "games": 17,
+     "win": 0.765
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Tyranitar"
+     ],
+     "games": 14,
+     "win": 0.786
+    }
+   ],
+   "note": "Break the setter before Aurora Veil goes up: Fake Out it or target it on turn 1."
+  },
+  {
+   "name": "Mega Flying Tailwind",
+   "win": 0.663,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Garchomp",
+      "Metagross"
+     ],
+     "games": 18,
+     "win": 0.611
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Primarina"
+     ],
+     "games": 15,
+     "win": 0.667
+    },
+    {
+     "pair": [
+      "Rillaboom",
+      "Tyranitar"
+     ],
+     "games": 10,
+     "win": 1
+    }
+   ],
+   "note": "Ice Punch and Rock Slide. Keep Rillaboom away from Flying moves."
+  },
+  {
+   "name": "Tailwind offense",
+   "win": 0.638,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Garchomp",
+      "Rillaboom"
+     ],
+     "games": 13,
+     "win": 0.615
+    },
+    {
+     "pair": [
+      "Garchomp",
+      "Volcarona"
+     ],
+     "games": 13,
+     "win": 0.769
+    },
+    {
+     "pair": [
+      "Garchomp",
+      "Primarina"
+     ],
+     "games": 12,
+     "win": 0.667
+    }
+   ],
+   "note": "Match Tailwind with Volcarona, and use Protect to use up theirs."
+  },
+  {
+   "name": "Raichu offense",
+   "win": 0.638,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Garchomp",
+      "Volcarona"
+     ],
+     "games": 17,
+     "win": 0.588
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 15,
+     "win": 0.533
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Volcarona"
+     ],
+     "games": 8,
+     "win": 0.625
+    }
+   ],
+   "note": "Stomping Tantrum from Garchomp and Metagross. Garchomp is immune to Electric, and Rillaboom resists it."
+  },
+  {
+   "name": "Psychic Terrain",
+   "win": 0.613,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Garchomp",
+      "Volcarona"
+     ],
+     "games": 19,
+     "win": 0.737
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 18,
+     "win": 0.611
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Primarina"
+     ],
+     "games": 15,
+     "win": 0.667
+    }
+   ],
+   "note": "Fake Out and Grassy Glide fail in Psychic Terrain. Switch Rillaboom in later to replace it with Grassy Terrain."
+  },
+  {
+   "name": "Fake Out balance",
+   "win": 0.613,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Primarina",
+      "Volcarona"
+     ],
+     "games": 27,
+     "win": 0.63
+    },
+    {
+     "pair": [
+      "Tyranitar",
+      "Volcarona"
+     ],
+     "games": 17,
+     "win": 0.471
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Rillaboom"
+     ],
+     "games": 8,
+     "win": 0.75
+    }
+   ],
+   "note": "Intimidate and Fake Out slow you down. Lead with special damage from Primarina and Volcarona."
+  },
+  {
+   "name": "Redirection + setup",
+   "win": 0.6,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Rillaboom",
+      "Volcarona"
+     ],
+     "games": 16,
+     "win": 0.625
+    },
+    {
+     "pair": [
+      "Garchomp",
+      "Metagross"
+     ],
+     "games": 14,
+     "win": 0.571
+    },
+    {
+     "pair": [
+      "Garchomp",
+      "Volcarona"
+     ],
+     "games": 13,
+     "win": 0.538
+    }
+   ],
+   "note": "Spread moves (Heat Wave, Hyper Voice, Rock Slide) ignore redirection. Haze removes the boosts."
+  },
+  {
+   "name": "Metagross mirror",
+   "win": 0.55,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Primarina",
+      "Volcarona"
+     ],
+     "games": 15,
+     "win": 0.4
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 11,
+     "win": 0.727
+    },
+    {
+     "pair": [
+      "Primarina",
+      "Tyranitar"
+     ],
+     "games": 10,
+     "win": 0.7
+    }
+   ],
+   "note": "Garchomp and Volcarona beat Metagross. Watch for its Ice Punch."
+  },
+  {
+   "name": "Rain",
+   "win": 0.513,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Garchomp",
+      "Metagross"
+     ],
+     "games": 20,
+     "win": 0.75
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Volcarona"
+     ],
+     "games": 18,
+     "win": 0.389
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 13,
+     "win": 0.538
+    }
+   ],
+   "note": "Rillaboom takes Water well and hits it with Grassy Glide. Tyranitar changes the weather."
+  }
+ ],
+ "hardest": [
+  {
+   "win": 0.125,
+   "team": [
+    "Salamence @ Salamencite",
+    "Golisopod @ Golisopite",
+    "Kommo-o @ Leftovers",
+    "Basculegion @ Sitrus Berry",
+    "Rillaboom @ Occa Berry",
+    "Indeedee-F @ Colbur Berry"
+   ]
+  },
+  {
+   "win": 0.125,
+   "team": [
+    "Pelipper @ Sitrus Berry",
+    "Golisopod @ Golisopite",
+    "Archaludon @ Leftovers",
+    "Sneasler @ Focus Sash",
+    "Annihilape @ Choice Scarf",
+    "Kingambit @ Black Glasses"
+   ]
+  },
+  {
+   "win": 0.125,
+   "team": [
+    "Indeedee-F @ Sitrus Berry",
+    "Delphox @ Delphoxite",
+    "Sneasler @ Electric Seed",
+    "Basculegion @ Focus Sash",
+    "Kingambit @ Life Orb",
+    "Garchomp @ Choice Scarf"
+   ]
+  },
+  {
+   "win": 0.125,
+   "team": [
+    "Indeedee-F @ Rocky Helmet",
+    "Gholdengo @ Life Orb",
+    "Incineroar @ Sitrus Berry",
+    "Basculegion @ Spell Tag",
+    "Rillaboom @ Miracle Seed",
+    "Kingambit @ Black Glasses"
+   ]
+  },
+  {
+   "win": 0.25,
+   "team": [
+    "Basculegion @ Focus Sash",
+    "Gardevoir @ Gardevoirite",
+    "Kommo-o @ Life Orb",
+    "Swampert @ Swampertite",
+    "Archaludon @ Leftovers",
+    "Rillaboom @ Miracle Seed"
+   ]
+  }
+ ],
+ "sample": {
+  "kind": "Sand",
+  "opponent": [
+   "Tyranitar",
+   "Excadrill",
+   "Whimsicott",
+   "Golisopod",
+   "Sneasler",
+   "Farigiraf"
+  ],
+  "turns": [
+   {
+    "turn": 0,
+    "steps": [
+     "You: Metagross comes in",
+     "You: Rillaboom comes in",
+     "Opponent: Tyranitar comes in",
+     "Opponent: Whimsicott comes in"
+    ]
+   },
+   {
+    "turn": 1,
+    "steps": [
+     "Opponent: Sneasler comes in",
+     "You: Metagross Mega Evolves",
+     "Opponent: Whimsicott uses Charm on Metagross",
+     "You: Metagross uses Psychic Fangs on Whimsicott",
+     "You: Rillaboom uses Wood Hammer on Sneasler",
+     "Opponent: Sneasler faints",
+     "Opponent: Tyranitar comes in"
+    ]
+   },
+   {
+    "turn": 2,
+    "steps": [
+     "Opponent: Tyranitar Mega Evolves",
+     "You: Rillaboom uses Grassy Glide on Tyranitar",
+     "Opponent: Whimsicott uses Moonblast on Rillaboom",
+     "You: Metagross uses Psychic Fangs on Whimsicott",
+     "Opponent: Whimsicott faints",
+     "Opponent: Tyranitar uses Knock Off on Rillaboom",
+     "You: Rillaboom faints",
+     "Opponent: Excadrill comes in",
+     "You: Garchomp comes in"
+    ]
+   },
+   {
+    "turn": 3,
+    "steps": [
+     "You: Metagross uses Protect",
+     "Opponent: Excadrill uses Iron Head on Garchomp",
+     "You: Garchomp uses Stomping Tantrum on Tyranitar",
+     "Opponent: Tyranitar faints"
+    ]
+   },
+   {
+    "turn": 4,
+    "steps": [
+     "You: Volcarona comes in",
+     "Opponent: Excadrill uses Protect",
+     "You: Garchomp uses Stomping Tantrum on Excadrill"
+    ]
+   },
+   {
+    "turn": 5,
+    "steps": [
+     "You: Metagross comes in",
+     "Opponent: Excadrill uses Rock Slide on Metagross",
+     "You: Garchomp uses Stomping Tantrum on Excadrill",
+     "Opponent: Excadrill faints"
+    ]
+   }
+  ]
+ }
+}

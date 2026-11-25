@@ -1,0 +1,38 @@
+{
+ "plan": [
+  "Turn 1: attack with the partner while Rillaboom uses Fake Out or Volcarona sets Tailwind. Protect the member the opponent wants to hit.",
+  "Middle: use Rage Powder to take single-target hits away from Metagross or Garchomp. Leave with U-turn to bring Fake Out back later.",
+  "Mega Metagross is the closer. Keep it healthy, and bring it in when its Fire, Ground, Dark and Ghost threats are weak or gone.",
+  "Against Trick Room, use Protect on both sides to use up its turns, then attack."
+ ],
+ "cautions": [
+  "Tyranitar's sand damages Volcarona, Rillaboom and Primarina. Don't bring it just for the numbers.",
+  "Grassy Terrain halves Earthquake and Bulldoze only. Stomping Tantrum and High Horsepower still do full damage.",
+  "With Ice Punch, Metagross has no strong hit on Fairies. Wear them down, or let Volcarona use Heat Wave.",
+  "There is no Intimidate, and Haze is the only answer to boosts."
+ ],
+ "roles": {
+  "Metagross": "Mega attacker and closer. Psychic Fangs for Fighting types, Ice Punch for Dragons, Stomping Tantrum for Fire and Steel.",
+  "Rillaboom": "Fake Out, Grassy Glide priority and terrain. U-turn to pivot.",
+  "Garchomp": "Fast Ground attacker. Rock Slide for Flying types and Charizard.",
+  "Volcarona": "Tailwind and Rage Powder. Flame Body and Rocky Helmet punish contact.",
+  "Tyranitar": "Removes sun and rain with sand. Rock Slide and Knock Off.",
+  "Primarina": "Spread Water damage and Moonblast. Immune to Dragon; Haze removes boosts.",
+  "Basculegion": "Late-game cleaner with Last Respects. Aqua Jet finishes weak targets."
+ },
+ "archetypes": {
+  "Sun": "Bring Tyranitar or Garchomp for Rock Slide on Charizard, and keep Metagross away from Heat Wave.",
+  "Rain": "Rillaboom takes Water well and hits it with Grassy Glide. Tyranitar changes the weather.",
+  "Sand": "Grassy Glide and Primarina's Water moves punish Ground and Rock types.",
+  "Snow / Aurora Veil": "Break the setter before Aurora Veil goes up: Fake Out it or target it on turn 1.",
+  "Trick Room": "Hit the setter on turn 1. If Trick Room goes up, use Protect to use up its turns.",
+  "Psychic Terrain": "Fake Out and Grassy Glide fail in Psychic Terrain. Switch Rillaboom in later to replace it with Grassy Terrain.",
+  "Tailwind offense": "Match Tailwind with Volcarona, and use Protect to use up theirs.",
+  "Redirection + setup": "Spread moves (Heat Wave, Hyper Voice, Rock Slide) ignore redirection. Haze removes the boosts.",
+  "Fake Out balance": "Intimidate and Fake Out slow you down. Lead with special damage from Primarina and Volcarona.",
+  "Screens": "Pressure Grimmsnarl early. It leaves with Parting Shot, so attack the partner.",
+  "Mega Flying Tailwind": "Ice Punch and Rock Slide. Keep Rillaboom away from Flying moves.",
+  "Raichu offense": "Stomping Tantrum from Garchomp and Metagross. Garchomp is immune to Electric, and Rillaboom resists it.",
+  "Metagross mirror": "Garchomp and Volcarona beat Metagross. Watch for its Ice Punch."
+ }
+}

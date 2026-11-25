@@ -3,6 +3,7 @@ import {
   createDataset, exportTeam, likelyTeam, parseTeam, teamCoverage, teamDefense, topThreats, validateTeam,
 } from './core';
 import { loadDex, loadUsage, usageFiles } from './data';
+import { guideFor } from './plays';
 import { defaultTeam, savedTeams } from './teams';
 import type { Conditions, Dataset, DexJson, Meta, PokemonSet, UsageSummary } from './types';
 import { useStored } from './lib/storage';
@@ -14,10 +15,11 @@ import { DamageMatrix } from './components/DamageMatrix';
 import { SpeedTiers } from './components/SpeedTiers';
 import { CoverageTable, DefenseTable } from './components/TypeTables';
 import { CoreGraph } from './components/CoreGraph';
+import { PlayGuide } from './components/PlayGuide';
 import { Collapsible } from './components/Collapsible';
 import { STACKED, useMediaQuery } from './lib/useMediaQuery';
 
-const TABS = ['Team', 'Damage', 'Speed', 'Defense', 'Coverage'] as const;
+const TABS = ['Team', 'Damage', 'Speed', 'Defense', 'Coverage', 'Play'] as const;
 type Tab = (typeof TABS)[number];
 
 /** A legal sample team: the most used Pokémon, skipping repeats of a species or item. */
@@ -83,6 +85,7 @@ export function App() {
   }, [dataset, usage]);
 
   const parsed = useMemo(() => parseTeam(teamText), [teamText]);
+  const play = useMemo(() => guideFor(parsed), [parsed]);
   const problems = useMemo(() => (dataset ? validateTeam(parsed, dataset) : []), [parsed, dataset]);
   // Only calc sets the dataset knows; the problems list explains the rest.
   const myTeam = useMemo(
@@ -161,6 +164,8 @@ export function App() {
               if (t) setTeamText(t.text);
             }} />
         </main>
+      ) : tab === 'Play' ? (
+        <main className="main"><PlayGuide found={play} sets={parsed} dataset={dataset} /></main>
       ) : (
         <div className="layout">
           <aside className="side">

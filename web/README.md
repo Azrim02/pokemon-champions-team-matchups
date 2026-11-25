@@ -17,7 +17,10 @@ npm run typecheck
   run in `calc.worker.ts`, so editing the team doesn't block the page.
 - **Views:** Team (the team builder, full width: paste text plus a card per Pokémon), then Damage (best move each way plus speed per pairing; click a cell for every move),
   Speed tiers, Defense (a draggable graph of the
-  defensive cores, from `src/cores.js`, coloured by the weakness covered, above the team type chart), Coverage.
+  defensive cores, from `src/cores.js`, coloured by the weakness covered, above the team type chart), Coverage, and Play (how to play the team: jobs, leads, a plan per
+  archetype, hardest opponents and a sample win).
+- **Play guides:** `web/src/plays/*.json`, written by `tools/doubles-sim/guide.mjs` from simulated games.
+  `plays.ts` matches them by the six species and warns when items or moves differ from the tested sets.
 - **Saved teams:** each Showdown paste in `web/src/teams/*.txt` appears in the team picker; `DEFAULT_TEAM`
   in `teams.ts` names the one a first visit starts from. A `=== [format] Name ===` first line (Showdown's
   teambuilder header) sets the name shown in the picker; otherwise it's made from the file name.

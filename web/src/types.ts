@@ -161,6 +161,25 @@ export interface DefensiveCores {
 
 export interface CoverageCell { attacker: string; defender: string; best: number | null; move: string | null }
 
+/** Written by tools/doubles-sim/guide.mjs. Rates are 0 to 1. */
+export interface PlayGuide {
+  id: string;
+  species: string[];
+  games: number;
+  opponents: number;
+  overall: Record<'usage' | 'archetypes', { win: number; se: number }>;
+  sets: { species: string; item: string; moves: string[] }[];
+  plan: string[];
+  cautions: string[];
+  mons: { species: string; role: string; brought: number; led: number; won: number; moves: { move: string; share: number }[] }[];
+  leads: { pair: string[]; games: number; win: number }[];
+  fours: { lead: string[]; back: string[]; games: number; win: number }[];
+  turn1: { mon: string; move: string; games: number }[];
+  archetypes: { name: string; win: number; games: number; leads: { pair: string[]; games: number; win: number }[]; note: string }[];
+  hardest: { win: number; team: string[] }[];
+  sample: { kind: string; opponent: string[]; turns: { turn: number; steps: string[] }[] } | null;
+}
+
 // Worker protocol
 
 export interface CalcRequest {
