@@ -17,7 +17,9 @@ export const DEFAULT_CONDITIONS: UiConditions = {
 
 const WEATHER = ['Sun', 'Rain', 'Sand', 'Snow'];
 const TERRAIN = ['Electric', 'Grassy', 'Psychic', 'Misty'];
-const SIDE_FLAGS: [keyof SideConditions, string][] = [
+/** A Doubles team brings 4 Pokémon, so up to 3 of its allies can faint. */
+const FAINTS = [0, 1, 2, 3];
+const SIDE_FLAGS: [Exclude<keyof SideConditions, 'alliesFainted'>, string][] = [
   ['isTailwind', 'Tailwind'],
   ['isReflect', 'Reflect'],
   ['isLightScreen', 'Light Screen'],
@@ -30,8 +32,8 @@ interface Props { value: UiConditions; onChange(c: UiConditions): void }
 
 export function ConditionsPanel({ value, onChange }: Props) {
   const set = <K extends keyof UiConditions>(k: K, v: UiConditions[K]) => onChange({ ...value, [k]: v });
-  const side = (which: 'mySide' | 'oppSide', flag: keyof SideConditions, on: boolean) =>
-    set(which, { ...value[which], [flag]: on });
+  const side = <K extends keyof SideConditions>(which: 'mySide' | 'oppSide', flag: K, v: SideConditions[K]) =>
+    set(which, { ...value[which], [flag]: v });
 
   return (
     <section className="panel">
@@ -81,6 +83,20 @@ export function ConditionsPanel({ value, onChange }: Props) {
               ))}
             </tr>
           ))}
+          <tr title="Fainted Pokémon on that side. Last Respects gets 50 more base power per faint, and Supreme Overlord gets 10% more power per faint.">
+            <th scope="row">Fainted</th>
+            {(['mySide', 'oppSide'] as const).map(which => (
+              <td key={which}>
+                <select
+                  aria-label={`Fainted Pokémon (${which === 'mySide' ? 'my side' : 'their side'})`}
+                  value={value[which].alliesFainted ?? 0}
+                  onChange={e => side(which, 'alliesFainted', Number(e.target.value))}
+                >
+                  {FAINTS.map(n => <option key={n} value={n}>{n}</option>)}
+                </select>
+              </td>
+            ))}
+          </tr>
         </tbody>
       </table>
     </section>

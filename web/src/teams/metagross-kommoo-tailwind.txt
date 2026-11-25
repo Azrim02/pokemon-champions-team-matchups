@@ -14,8 +14,8 @@ Ability: Soundproof
 EVs: 2 HP / 32 Atk / 32 Spe
 Jolly Nature
 - Close Combat
-- Dragon Claw
 - Iron Head
+- Coaching
 - Protect
 
 Incineroar @ Sitrus Berry
@@ -34,7 +34,7 @@ Timid Nature
 - Tailwind
 - Moonblast
 - Encore
-- Taunt
+- Protect
 
 Basculegion @ Mystic Water
 Ability: Adaptability
