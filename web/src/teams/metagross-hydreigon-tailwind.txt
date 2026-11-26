@@ -9,23 +9,23 @@ Jolly Nature
 - Stomping Tantrum
 - Protect
 
-Hydreigon @ Life Orb
+Hydreigon @ Focus Sash
 Ability: Levitate
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
 - Draco Meteor
 - Dark Pulse
-- Earth Power
+- Tailwind
 - Protect
 
-Volcarona @ Rocky Helmet
+Volcarona @ Grassy Seed
 Ability: Flame Body
-EVs: 32 HP / 16 Def / 8 SpA / 10 Spe
-Bold Nature
+EVs: 32 HP / 32 SpA / 2 Spe
+Modest Nature
+- Quiver Dance
 - Heat Wave
-- Struggle Bug
-- Tailwind
-- Rage Powder
+- Bug Buzz
+- Protect
 
 Rillaboom @ Miracle Seed
 Ability: Grassy Surge
