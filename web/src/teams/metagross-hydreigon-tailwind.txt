@@ -1,0 +1,55 @@
+=== [Reg M-C] Metagross / Hydreigon / Volcarona ===
+
+Metagross @ Metagrossite
+Ability: Clear Body
+EVs: 2 HP / 32 Atk / 32 Spe
+Jolly Nature
+- Psychic Fangs
+- Iron Head
+- Stomping Tantrum
+- Protect
+
+Hydreigon @ Life Orb
+Ability: Levitate
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Draco Meteor
+- Dark Pulse
+- Earth Power
+- Protect
+
+Volcarona @ Rocky Helmet
+Ability: Flame Body
+EVs: 32 HP / 16 Def / 8 SpA / 10 Spe
+Bold Nature
+- Heat Wave
+- Struggle Bug
+- Tailwind
+- Rage Powder
+
+Rillaboom @ Miracle Seed
+Ability: Grassy Surge
+EVs: 32 HP / 32 Atk / 2 SpD
+Adamant Nature
+- Fake Out
+- Grassy Glide
+- Wood Hammer
+- High Horsepower
+
+Rotom-Wash @ Sitrus Berry
+Ability: Levitate
+EVs: 32 HP / 2 Def / 32 SpA
+Modest Nature
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Protect
+
+Sylveon @ Fairy Feather
+Ability: Pixilate
+EVs: 32 HP / 2 Def / 32 SpA
+Modest Nature
+- Hyper Voice
+- Moonblast
+- Quick Attack
+- Protect

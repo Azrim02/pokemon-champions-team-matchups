@@ -7,7 +7,7 @@ import { readStored, writeStored } from './lib/storage';
 const files = import.meta.glob<string>('./teams/*.txt', { query: '?raw', import: 'default', eager: true });
 
 /** File name (without .txt) of the newest team: the one to start from. */
-const DEFAULT_TEAM = 'metagross-primarina';
+const DEFAULT_TEAM = 'metagross-hydreigon-tailwind';
 
 export interface SavedTeam { id: string; name: string; text: string }
 
