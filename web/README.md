@@ -15,10 +15,16 @@ npm run typecheck
 - **Logic** lives in `src/` and is shared with the Node tests. `web/src/core.ts` adds types to it.
   The main thread only imports modules that don't need `@smogon/calc`. `calcSetVsSet` and `speedOf`
   run in `calc.worker.ts`, so editing the team doesn't block the page.
-- **Views:** Team (the team builder, full width: paste text plus a card per Pokémon), then Damage (best move each way plus speed per pairing; click a cell for every move),
+- **Views:** Team (the team builder, full width: paste text plus an editable card per Pokémon, see below), then Damage (best move each way plus speed per pairing; click a cell for every move),
   Speed tiers, Defense (a draggable graph of the
   defensive cores, from `src/cores.js`, coloured by the weakness covered, above the team type chart), Coverage, and Play (how to play the team: jobs, leads, a plan per
   archetype, hardest opponents and a sample win).
+- **Team form** (`components/SetEditor.tsx`, `components/Combobox.tsx`): each card has search boxes for the
+  Pokémon, item and moves, dropdowns for ability and nature, and Stat Point sliders. Options are only what the
+  Pokémon can legally use (learnset, its own Mega Stone), most used first, with the usage share. "Add Pokémon"
+  and "Use usage set" start from the most common usage set. The text stays the source of truth: every form edit
+  rewrites the whole team as Showdown text (keeping a `===` header line), so lines the parser ignores (Level,
+  IVs, Tera Type) are dropped.
 - **Play guides:** `web/src/plays/*.json`, written by `tools/doubles-sim/guide.mjs` from simulated games.
   `plays.ts` matches them by the six species and warns when items or moves differ from the tested sets.
 - **Saved teams:** each Showdown paste in `web/src/teams/*.txt` appears in the team picker; `DEFAULT_TEAM`

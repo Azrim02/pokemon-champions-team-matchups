@@ -1,9 +1,9 @@
-import { SP_LIMITS } from '../core';
-import type { Dataset, PokemonSet } from '../types';
-import { battleForme } from '../lib/format';
-import { TypeBadge } from './TypeBadge';
-import { Sprite } from './Sprite';
+import { useMemo } from 'react';
+import { exportTeam } from '../core';
+import type { Dataset, PokemonSet, UsageSummary } from '../types';
 import type { SavedTeam } from '../teams';
+import { Combobox } from './Combobox';
+import { SetEditor, changeSpecies, speciesOptions, usageSet } from './SetEditor';
 
 interface Props {
   text: string;
@@ -13,44 +13,41 @@ interface Props {
   sets: PokemonSet[];
   problems: string[];
   dataset: Dataset;
+  usage: UsageSummary | null;
   teams: SavedTeam[];
   onLoad(id: string): void;
 }
 
-const STATS = [['hp', 'HP'], ['atk', 'Atk'], ['def', 'Def'], ['spa', 'SpA'], ['spd', 'SpD'], ['spe', 'Spe']] as const;
+/** The Showdown teambuilder header line ("=== [format] Name ==="), kept when the form rewrites the text. */
+const headerOf = (text: string) => text.match(/^\s*(===.*===)[ \t]*(?:\n|$)/)?.[1];
 
-function SetCard({ set, dataset }: { set: PokemonSet; dataset: Dataset }) {
-  const forme = battleForme(set, dataset);
-  const species = dataset.getPokemon(forme);
-  const spread = STATS.filter(([id]) => set.evs?.[id]).map(([id, name]) => `${set.evs[id]} ${name}`).join(' / ');
-  const total = STATS.reduce((n, [id]) => n + (set.evs?.[id] ?? 0), 0);
-  return (
-    <li className="set-card">
-      <div className="set-head">
-        <Sprite species={forme} dataset={dataset} size={48} />
-        <div>
-          <span className="roster-name">{set.name || set.species}</span>
-          {forme !== set.species && <> <span className="tag">{forme}</span></>}
-          <div className="muted small">{[set.item, set.ability].filter(Boolean).join(' · ')}</div>
-        </div>
-        <span className="types">{species?.types.map(t => <TypeBadge key={t} type={t} />)}</span>
-      </div>
-      <div className="small">
-        {set.nature && `${set.nature} · `}{spread || 'No Stat Points'}
-        <span className="muted"> ({total}/{SP_LIMITS.total})</span>
-      </div>
-      <ul className="set-moves">{set.moves.map((m, i) => <li key={i}>{m}</li>)}</ul>
-      {!species && <p className="warn small">Not in the current data, so it's left out of the matchups.</p>}
-    </li>
-  );
-}
+export function TeamPanel({ text, onText, saved, sets, problems, dataset, usage, teams, onLoad }: Props) {
+  const all = useMemo(() => speciesOptions(dataset, usage), [dataset, usage]);
+  // Species Clause: flag the species already on the team (any forme counts).
+  const onTeam = new Set(sets.map(s => dataset.getPokemon(s.species)?.baseSpecies));
+  const species = useMemo(() => all.map(o => (onTeam.has(dataset.getPokemon(o.value)?.baseSpecies)
+    ? { ...o, hint: `on team · ${o.hint ?? ''}` } : o)), [all, [...onTeam].join()]);
+  // The text stays the source of truth: every form edit writes the whole team back as Showdown text.
+  const commit = (next: PokemonSet[]) => {
+    const head = headerOf(text);
+    onText((head ? `${head}\n\n` : '') + exportTeam(next));
+  };
+  const replace = (i: number, s: PokemonSet) => commit(sets.map((x, k) => (k === i ? s : x)));
+  const moveSet = (i: number, step: number) => {
+    const next = [...sets];
+    [next[i], next[i + step]] = [next[i + step], next[i]];
+    commit(next);
+  };
+  const add = (name: string) => {
+    if (!name) return;
+    commit([...sets, usageSet(name, dataset, usage) ?? changeSpecies(null, name, dataset, usage)]);
+  };
 
-export function TeamPanel({ text, onText, saved, sets, problems, dataset, teams, onLoad }: Props) {
   return (
     <section className="builder">
       <div className="panel">
         <header className="panel-head">
-          <h2>Team builder</h2>
+          <h2>Team text</h2>
           <select aria-label="Load a team" value="" onChange={e => { if (e.target.value) onLoad(e.target.value); }}>
             <option value="">Load team…</option>
             {teams.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
@@ -67,7 +64,7 @@ export function TeamPanel({ text, onText, saved, sets, problems, dataset, teams,
           rows={28}
         />
         {saved
-          ? <p className="muted small note">Saved in this browser as you type.</p>
+          ? <p className="muted small note">Saved in this browser as you type. The form and the text edit the same team.</p>
           : <p className="warn small note">This browser is blocking storage, so the team won't be here next time.</p>}
       </div>
       <div>
@@ -77,9 +74,20 @@ export function TeamPanel({ text, onText, saved, sets, problems, dataset, teams,
             <ul>{problems.map((p, i) => <li key={i}>{p}</li>)}</ul>
           </details>
         ) : sets.length > 0 && <p className="ok">Legal for this regulation</p>}
-        {sets.length > 0
-          ? <ul className="set-cards">{sets.map((s, i) => <SetCard key={i} set={s} dataset={dataset} />)}</ul>
-          : <p className="muted">Paste a team, or load one, to see it here.</p>}
+        <ul className="set-cards">
+          {sets.map((s, i) => (
+            <SetEditor key={i} set={s} index={i} count={sets.length} dataset={dataset} usage={usage} species={species}
+              onChange={x => replace(i, x)} onRemove={() => commit(sets.filter((_, k) => k !== i))}
+              onMove={step => moveSet(i, step)} />
+          ))}
+          {sets.length < 6 && (
+            <li className="set-card add-slot">
+              <span className="muted small">Add Pokémon {sets.length + 1} of 6</span>
+              <Combobox label="Add a Pokémon" value="" options={species} placeholder="Search Pokémon" onChange={add} />
+              <span className="muted small">Starts from its most common usage set.</span>
+            </li>
+          )}
+        </ul>
       </div>
     </section>
   );

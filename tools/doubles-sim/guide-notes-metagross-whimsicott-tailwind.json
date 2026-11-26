@@ -1,0 +1,38 @@
+{
+ "plan": [
+  "Turn 1: Whimsicott sets Tailwind with Prankster priority while Rillaboom uses Fake Out on the biggest threat. Focus Sash keeps Whimsicott alive for one hit.",
+  "Under Tailwind, Volcarona uses Quiver Dance once while a partner takes attention, then Heat Wave hits both foes. Grassy Terrain triggers its Grassy Seed.",
+  "Milotic's Icy Wind is a second spread move and speed control when Tailwind is down. Intimidate and stat drops raise its Special Attack (Competitive).",
+  "Mega Metagross removes Fairies and Sneasler. Ice Punch hits Dragons and Flying types; keep Metagross away from strong Fire or Ground attacks.",
+  "Against Trick Room, use Encore or Protect to use up its turns. Volcarona's Quiver Dance boosts still count after Trick Room ends."
+ ],
+ "cautions": [
+  "Fire hits Metagross, Rillaboom and Whimsicott super effectively. Milotic, Volcarona and Hydreigon take Fire; keep one of them in against Charizard-Mega-Y or Heat Wave.",
+  "Whimsicott takes 4× from Poison and Rillaboom 2×. Metagross is immune; lead it against Sneasler.",
+  "Rock moves hit Volcarona 4×. Keep it in the back against Rock Slide leads such as Tyranitar.",
+  "Whimsicott and Rillaboom are both Grass, so Flying and Ice moves can hit both of them at once."
+ ],
+ "roles": {
+  "Metagross": "Mega attacker. Psychic Fangs for Fighting and Poison types, Ice Punch for Dragons and Flying types, Stomping Tantrum for Fire and Steel.",
+  "Rillaboom": "Fake Out, Grassy Glide priority and terrain. High Horsepower for Steel, Fire and Poison types.",
+  "Hydreigon": "Life Orb special attacker. Draco Meteor and Dark Pulse for Dragons, Ghosts and Psychics; Earth Power for Steel types.",
+  "Whimsicott": "Prankster Tailwind setter with Focus Sash. Encore locks a foe into a setup or Protect; Moonblast for Dragons and Fighting types.",
+  "Volcarona": "Spread damage and win condition. Quiver Dance, then Heat Wave and Bug Buzz. Grassy Seed gives +1 Def in Grassy Terrain.",
+  "Milotic": "Bulky Water. Icy Wind for spread speed control, Scald for burns, Ice Beam for Dragons and Flying types. Competitive punishes Intimidate."
+ },
+ "archetypes": {
+  "Sun": "Lead Milotic. Keep Metagross, Rillaboom and Whimsicott away from Charizard's Heat Wave.",
+  "Rain": "Rillaboom, Whimsicott and Hydreigon take Water well. Volcarona waits until the rain ends.",
+  "Sand": "Grassy Glide, High Horsepower and Scald punish Ground, Rock and Steel types. Watch Rock Slide on Volcarona.",
+  "Snow / Aurora Veil": "Break the setter before Aurora Veil goes up: Fake Out it or target it on turn 1. Heat Wave hits Ice types hard.",
+  "Trick Room": "Hit the setter on turn 1. If Trick Room goes up, Encore or Protect to use up its turns.",
+  "Psychic Terrain": "Fake Out and Grassy Glide fail in Psychic Terrain, and Grassy Seed does not trigger. Prankster Tailwind still works, because it targets your own side.",
+  "Tailwind offense": "Match Tailwind with Whimsicott at once, and use Protect to use up theirs. Icy Wind slows them after it ends.",
+  "Redirection + setup": "Heat Wave and Icy Wind ignore redirection. Encore the setup move.",
+  "Fake Out balance": "Intimidate raises Milotic's Special Attack and does not affect the special attackers. Lead Milotic or Hydreigon.",
+  "Screens": "Attack the screen setter early, or Encore it into the screen move. Quiver Dance through the screens.",
+  "Mega Flying Tailwind": "Ice Punch from Metagross and Ice Beam from Milotic. Keep Rillaboom, Whimsicott and Volcarona away from Flying moves.",
+  "Raichu offense": "Stomping Tantrum from Metagross and Earth Power from Hydreigon. Rillaboom and Hydreigon resist Electric.",
+  "Metagross mirror": "Heat Wave from Volcarona, Dark Pulse from Hydreigon and Earth Power. Scald can burn it."
+ }
+}

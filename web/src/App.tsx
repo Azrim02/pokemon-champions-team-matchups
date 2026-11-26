@@ -157,7 +157,7 @@ export function App() {
       {tab === 'Team' ? (
         <main className="main">
           <TeamPanel text={teamText} onText={setTeamText} saved={teamSaved} sets={parsed} problems={problems}
-            dataset={dataset} teams={savedTeams}
+            dataset={dataset} usage={usage} teams={savedTeams}
             onLoad={id => {
               if (id === 'usage') { if (usage) setTeamText(sampleTeam(usage, dataset)); return; }
               const t = savedTeams.find(x => x.id === id);

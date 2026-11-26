@@ -1,6 +1,6 @@
 # Gauntlet
 
-Written 2026-11-26T01:56:23.378Z by `gauntlet.mjs`. Every team plays the same opponents with the same seeds. ± is the standard error across opponents; differences are paired by opponent.
+Written 2026-11-26T08:37:48.203Z by `gauntlet.mjs`. Every team plays the same opponents with the same seeds. ± is the standard error across opponents; differences are paired by opponent.
 
 ## Win rates
 
@@ -17,6 +17,7 @@ Written 2026-11-26T01:56:23.378Z by `gauntlet.mjs`. Every team plays the same op
 | hydreigon-talonflame | 48.5 ± 1.9 | 46.7 ± 2.2 | 49.0 ± 1.9 | 47.7 ± 1.8 |
 | kommoo-tailwind | 52.8 ± 1.9 | 46.2 ± 2.1 | 52.2 ± 1.9 | 47.4 ± 2.0 |
 | hydreigon-volcarona | 58.8 ± 2.0 | 61.1 ± 2.2 | 61.2 ± 1.8 | 63.6 ± 1.9 |
+| whimsicott-volcarona | 64.5 ± 1.9 | 63.7 ± 1.9 | 64.7 ± 1.7 | 64.5 ± 1.9 |
 
 ## revised minus each team
 
@@ -32,24 +33,25 @@ Written 2026-11-26T01:56:23.378Z by `gauntlet.mjs`. Every team plays the same op
 | hydreigon-talonflame | +18.8 ± 1.7 | +19.9 ± 2.1 | +17.6 ± 2.6 |
 | kommoo-tailwind | +16.8 ± 1.8 | +15.6 ± 2.5 | +18.2 ± 2.6 |
 | hydreigon-volcarona | +6.7 ± 1.8 | +9.7 ± 2.4 | +3.3 ± 2.6 |
+| whimsicott-volcarona | +2.4 ± 1.8 | +3.9 ± 2.5 | +0.6 ± 2.6 |
 
 ## Fresh archetypes
 
-| Archetype | revised | original | primarina | life-orb-basculegion | focus-sash-basculegion | mystic-water-basculegion | ice-punch-tyranitar | salamence | hydreigon-talonflame | kommoo-tailwind | hydreigon-volcarona |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| Sun | 67.5 | 57.5 | 73.8 | 62.5 | 65.0 | 61.3 | 70.0 | 72.5 | 46.3 | 48.8 | 57.5 |
-| Rain | 52.5 | 47.5 | 51.2 | 40.0 | 45.0 | 46.3 | 43.8 | 58.8 | 35.0 | 45.0 | 61.3 |
-| Sand | 77.5 | 73.8 | 73.8 | 73.8 | 68.8 | 72.5 | 82.5 | 73.8 | 75.0 | 53.8 | 62.5 |
-| Snow / Aurora Veil | 60.0 | 46.3 | 70.0 | 67.5 | 65.0 | 55.0 | 72.5 | 36.3 | 57.5 | 35.0 | 56.3 |
-| Trick Room | 68.8 | 70.0 | 71.3 | 62.5 | 62.5 | 70.0 | 75.0 | 73.8 | 41.3 | 53.8 | 81.3 |
-| Psychic Terrain | 70.0 | 70.0 | 61.3 | 61.3 | 61.3 | 80.0 | 66.3 | 72.5 | 58.8 | 52.5 | 71.3 |
-| Tailwind offense | 53.8 | 48.8 | 63.7 | 67.5 | 65.0 | 70.0 | 57.5 | 42.5 | 45.0 | 51.2 | 58.8 |
-| Redirection + setup | 65.0 | 68.8 | 60.0 | 55.0 | 50.0 | 55.0 | 42.5 | 36.3 | 40.0 | 45.0 | 60.0 |
-| Fake Out balance | 55.0 | 52.5 | 61.3 | 48.8 | 55.0 | 46.3 | 41.3 | 53.8 | 42.5 | 41.3 | 53.8 |
-| Screens | 68.8 | 60.0 | 76.3 | 68.8 | 68.8 | 66.3 | 56.3 | 56.3 | 57.5 | 48.8 | 65.0 |
-| Mega Flying Tailwind | 56.3 | 37.5 | 66.3 | 56.3 | 51.2 | 46.3 | 58.8 | 52.5 | 33.8 | 43.8 | 52.5 |
-| Raichu offense | 76.3 | 66.3 | 63.7 | 68.8 | 72.5 | 65.0 | 76.3 | 63.7 | 38.8 | 57.5 | 58.8 |
-| Metagross mirror | 65.0 | 55.0 | 55.0 | 60.0 | 62.5 | 62.5 | 61.3 | 55.0 | 36.3 | 23.8 | 55.0 |
+| Archetype | revised | original | primarina | life-orb-basculegion | focus-sash-basculegion | mystic-water-basculegion | ice-punch-tyranitar | salamence | hydreigon-talonflame | kommoo-tailwind | hydreigon-volcarona | whimsicott-volcarona |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Sun | 67.5 | 57.5 | 73.8 | 62.5 | 65.0 | 61.3 | 70.0 | 72.5 | 46.3 | 48.8 | 57.5 | 57.5 |
+| Rain | 52.5 | 47.5 | 51.2 | 40.0 | 45.0 | 46.3 | 43.8 | 58.8 | 35.0 | 45.0 | 61.3 | 57.5 |
+| Sand | 77.5 | 73.8 | 73.8 | 73.8 | 68.8 | 72.5 | 82.5 | 73.8 | 75.0 | 53.8 | 62.5 | 71.3 |
+| Snow / Aurora Veil | 60.0 | 46.3 | 70.0 | 67.5 | 65.0 | 55.0 | 72.5 | 36.3 | 57.5 | 35.0 | 56.3 | 62.5 |
+| Trick Room | 68.8 | 70.0 | 71.3 | 62.5 | 62.5 | 70.0 | 75.0 | 73.8 | 41.3 | 53.8 | 81.3 | 71.3 |
+| Psychic Terrain | 70.0 | 70.0 | 61.3 | 61.3 | 61.3 | 80.0 | 66.3 | 72.5 | 58.8 | 52.5 | 71.3 | 68.8 |
+| Tailwind offense | 53.8 | 48.8 | 63.7 | 67.5 | 65.0 | 70.0 | 57.5 | 42.5 | 45.0 | 51.2 | 58.8 | 67.5 |
+| Redirection + setup | 65.0 | 68.8 | 60.0 | 55.0 | 50.0 | 55.0 | 42.5 | 36.3 | 40.0 | 45.0 | 60.0 | 62.5 |
+| Fake Out balance | 55.0 | 52.5 | 61.3 | 48.8 | 55.0 | 46.3 | 41.3 | 53.8 | 42.5 | 41.3 | 53.8 | 52.5 |
+| Screens | 68.8 | 60.0 | 76.3 | 68.8 | 68.8 | 66.3 | 56.3 | 56.3 | 57.5 | 48.8 | 65.0 | 63.7 |
+| Mega Flying Tailwind | 56.3 | 37.5 | 66.3 | 56.3 | 51.2 | 46.3 | 58.8 | 52.5 | 33.8 | 43.8 | 52.5 | 67.5 |
+| Raichu offense | 76.3 | 66.3 | 63.7 | 68.8 | 72.5 | 65.0 | 76.3 | 63.7 | 38.8 | 57.5 | 58.8 | 61.3 |
+| Metagross mirror | 65.0 | 55.0 | 55.0 | 60.0 | 62.5 | 62.5 | 61.3 | 55.0 | 36.3 | 23.8 | 55.0 | 65.0 |
 
 ## Types
 
@@ -66,6 +68,7 @@ Written 2026-11-26T01:56:23.378Z by `gauntlet.mjs`. Every team plays the same op
 | hydreigon-talonflame | none | none |
 | kommoo-tailwind | Fairy | none |
 | hydreigon-volcarona | none | none |
+| whimsicott-volcarona | Grass | none |
 
 ## Brought and led (fresh sets)
 
@@ -80,3 +83,4 @@ Written 2026-11-26T01:56:23.378Z by `gauntlet.mjs`. Every team plays the same op
 - **hydreigon-talonflame:** Metagross 87.3% brought, 41.0% led, 48.3% won; Sneasler 74.1% brought, 33.7% led, 48.4% won; Hydreigon 66.0% brought, 34.5% led, 47.7% won; Talonflame 62.1% brought, 33.1% led, 43.8% won; Rillaboom 57.9% brought, 30.8% led, 49.7% won; Rotom-Wash 52.6% brought, 26.8% led, 47.9% won
 - **kommoo-tailwind:** Metagross 85.5% brought, 39.2% led, 51.3% won; Whimsicott 66.7% brought, 50.0% led, 47.3% won; Basculegion 64.2% brought, 31.7% led, 51.8% won; Sylveon 63.4% brought, 31.1% led, 50.1% won; Incineroar 61.1% brought, 22.3% led, 50.2% won; Kommo-o 59.1% brought, 25.8% led, 47.2% won
 - **hydreigon-volcarona:** Metagross 87.0% brought, 34.6% led, 60.3% won; Hydreigon 72.8% brought, 37.9% led, 60.8% won; Volcarona 68.3% brought, 33.5% led, 59.6% won; Rotom-Wash 63.3% brought, 40.7% led, 56.7% won; Sylveon 57.2% brought, 29.0% led, 58.3% won; Rillaboom 51.5% brought, 24.3% led, 63.3% won
+- **whimsicott-volcarona:** Metagross 82.9% brought, 37.9% led, 64.1% won; Volcarona 71.6% brought, 29.1% led, 65.0% won; Milotic 70.4% brought, 41.1% led, 64.1% won; Rillaboom 62.5% brought, 24.7% led, 66.0% won; Whimsicott 56.4% brought, 40.4% led, 61.0% won; Hydreigon 56.3% brought, 26.9% led, 64.2% won
