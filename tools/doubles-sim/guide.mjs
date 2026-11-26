@@ -11,7 +11,8 @@ const st = json(stateFile), tk = JSON.stringify(team);
 const usage = st[`Fresh usage | ${tk}`], arch = st[`Fresh archetypes | ${tk}`];
 if (!usage || !arch) throw new Error('This team has no fresh gauntlet results');
 const uOpp = json(`${here}data/oppI.json`), aOpp = json(`${here}data/oppArchNew.json`), names = json(`${here}data/oppArchNew-names.json`);
-const notes = json(`${here}guide-notes.json`);
+// Notes for one team live in guide-notes-<team id>.json; guide-notes.json is the Primarina team's.
+const notes = json(fs.existsSync(`${here}guide-notes-${id}.json`) ? `${here}guide-notes-${id}.json` : `${here}guide-notes.json`);
 
 const mean = a => a.reduce((x, y) => x + y, 0) / a.length;
 const se = a => { const m = mean(a); return Math.sqrt(a.reduce((x, y) => x + (y - m) ** 2, 0) / Math.max(1, a.length - 1) / a.length); };

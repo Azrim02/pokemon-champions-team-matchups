@@ -1,0 +1,973 @@
+{
+ "id": "metagross-hydreigon-tailwind",
+ "species": [
+  "Metagross",
+  "Hydreigon",
+  "Volcarona",
+  "Rillaboom",
+  "Rotom-Wash",
+  "Sylveon"
+ ],
+ "games": 2240,
+ "opponents": 280,
+ "overall": {
+  "usage": {
+   "win": 0.588,
+   "se": 0.02
+  },
+  "archetypes": {
+   "win": 0.611,
+   "se": 0.022
+  }
+ },
+ "sets": [
+  {
+   "species": "Metagross",
+   "item": "Metagrossite",
+   "moves": [
+    "Psychic Fangs",
+    "Iron Head",
+    "Stomping Tantrum",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Hydreigon",
+   "item": "Focus Sash",
+   "moves": [
+    "Draco Meteor",
+    "Dark Pulse",
+    "Tailwind",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Volcarona",
+   "item": "Grassy Seed",
+   "moves": [
+    "Quiver Dance",
+    "Heat Wave",
+    "Bug Buzz",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Rillaboom",
+   "item": "Miracle Seed",
+   "moves": [
+    "Fake Out",
+    "Grassy Glide",
+    "Wood Hammer",
+    "High Horsepower"
+   ]
+  },
+  {
+   "species": "Rotom-Wash",
+   "item": "Sitrus Berry",
+   "moves": [
+    "Hydro Pump",
+    "Thunderbolt",
+    "Will-O-Wisp",
+    "Protect"
+   ]
+  },
+  {
+   "species": "Sylveon",
+   "item": "Fairy Feather",
+   "moves": [
+    "Hyper Voice",
+    "Moonblast",
+    "Quick Attack",
+    "Protect"
+   ]
+  }
+ ],
+ "plan": [
+  "Turn 1: Rillaboom uses Fake Out on the biggest threat while Hydreigon sets Tailwind. Focus Sash keeps Hydreigon alive for one hit.",
+  "Grassy Terrain triggers Volcarona's Grassy Seed. Under Tailwind, use Quiver Dance once or twice while a partner takes attention, then sweep with Heat Wave and Bug Buzz.",
+  "Mega Metagross removes Fairies and Sneasler. Keep it away from Charizard-Mega-Y and strong Fire or Ground attacks.",
+  "Against Trick Room, use Protect on both sides to use up its turns. Volcarona's Quiver Dance boosts still count after Trick Room ends."
+ ],
+ "cautions": [
+  "Charizard-Mega-Y OHKOs Metagross, Volcarona and Rillaboom. Only Rotom-Wash OHKOs it, so keep Rotom-Wash healthy.",
+  "Nothing OHKOs Kingambit without a boost. Burn it with Will-O-Wisp, or hit it with a boosted Heat Wave.",
+  "Volcarona and Sylveon are weak to Poison, and no member resists it. Watch Sneasler's Dire Claw.",
+  "Rain halves Heat Wave. Against rain, Volcarona needs more boosts, or it stays in the back."
+ ],
+ "mons": [
+  {
+   "species": "Metagross",
+   "role": "Mega attacker. Psychic Fangs for Fighting types, Iron Head for Fairies, Stomping Tantrum for Fire and Steel.",
+   "brought": 0.87,
+   "led": 0.346,
+   "won": 0.603,
+   "moves": [
+    {
+     "move": "Protect",
+     "share": 0.349
+    },
+    {
+     "move": "Psychic Fangs",
+     "share": 0.254
+    },
+    {
+     "move": "Stomping Tantrum",
+     "share": 0.199
+    },
+    {
+     "move": "Iron Head",
+     "share": 0.198
+    }
+   ]
+  },
+  {
+   "species": "Hydreigon",
+   "role": "Tailwind setter with Focus Sash. Draco Meteor and Dark Pulse for Dragons, Ghosts and Psychics.",
+   "brought": 0.728,
+   "led": 0.379,
+   "won": 0.608,
+   "moves": [
+    {
+     "move": "Dark Pulse",
+     "share": 0.273
+    },
+    {
+     "move": "Protect",
+     "share": 0.27
+    },
+    {
+     "move": "Tailwind",
+     "share": 0.231
+    },
+    {
+     "move": "Draco Meteor",
+     "share": 0.227
+    }
+   ]
+  },
+  {
+   "species": "Volcarona",
+   "role": "Quiver Dance win condition. Grassy Seed gives +1 Def in Grassy Terrain. Heat Wave and Bug Buzz.",
+   "brought": 0.683,
+   "led": 0.335,
+   "won": 0.596,
+   "moves": [
+    {
+     "move": "Protect",
+     "share": 0.345
+    },
+    {
+     "move": "Heat Wave",
+     "share": 0.285
+    },
+    {
+     "move": "Bug Buzz",
+     "share": 0.187
+    },
+    {
+     "move": "Quiver Dance",
+     "share": 0.182
+    }
+   ]
+  },
+  {
+   "species": "Rillaboom",
+   "role": "Fake Out, Grassy Glide priority and terrain. High Horsepower for Steel types.",
+   "brought": 0.515,
+   "led": 0.243,
+   "won": 0.633,
+   "moves": [
+    {
+     "move": "Grassy Glide",
+     "share": 0.395
+    },
+    {
+     "move": "Fake Out",
+     "share": 0.227
+    },
+    {
+     "move": "High Horsepower",
+     "share": 0.193
+    },
+    {
+     "move": "Wood Hammer",
+     "share": 0.185
+    }
+   ]
+  },
+  {
+   "species": "Rotom-Wash",
+   "role": "Answer to Charizard-Mega-Y and Fire types. Will-O-Wisp for physical attackers like Kingambit.",
+   "brought": 0.633,
+   "led": 0.407,
+   "won": 0.567,
+   "moves": []
+  },
+  {
+   "species": "Sylveon",
+   "role": "Spread Fairy damage with Hyper Voice. Immune to Dragon; Quick Attack finishes weak targets.",
+   "brought": 0.572,
+   "led": 0.29,
+   "won": 0.583,
+   "moves": [
+    {
+     "move": "Protect",
+     "share": 0.344
+    },
+    {
+     "move": "Hyper Voice",
+     "share": 0.287
+    },
+    {
+     "move": "Quick Attack",
+     "share": 0.189
+    },
+    {
+     "move": "Moonblast",
+     "share": 0.18
+    }
+   ]
+  }
+ ],
+ "leads": [
+  {
+   "pair": [
+    "Rotom-Wash",
+    "Sylveon"
+   ],
+   "games": 238,
+   "win": 0.508
+  },
+  {
+   "pair": [
+    "Hydreigon",
+    "Volcarona"
+   ],
+   "games": 205,
+   "win": 0.59
+  },
+  {
+   "pair": [
+    "Rotom-Wash",
+    "Volcarona"
+   ],
+   "games": 202,
+   "win": 0.54
+  },
+  {
+   "pair": [
+    "Metagross",
+    "Rotom-Wash"
+   ],
+   "games": 193,
+   "win": 0.596
+  },
+  {
+   "pair": [
+    "Hydreigon",
+    "Rotom-Wash"
+   ],
+   "games": 189,
+   "win": 0.64
+  },
+  {
+   "pair": [
+    "Metagross",
+    "Rillaboom"
+   ],
+   "games": 184,
+   "win": 0.69
+  },
+  {
+   "pair": [
+    "Hydreigon",
+    "Metagross"
+   ],
+   "games": 175,
+   "win": 0.629
+  },
+  {
+   "pair": [
+    "Hydreigon",
+    "Rillaboom"
+   ],
+   "games": 159,
+   "win": 0.673
+  }
+ ],
+ "fours": [
+  {
+   "lead": [
+    "Rotom-Wash",
+    "Volcarona"
+   ],
+   "back": [
+    "Hydreigon",
+    "Metagross"
+   ],
+   "games": 88,
+   "win": 0.58
+  },
+  {
+   "lead": [
+    "Hydreigon",
+    "Volcarona"
+   ],
+   "back": [
+    "Metagross",
+    "Rillaboom"
+   ],
+   "games": 77,
+   "win": 0.675
+  },
+  {
+   "lead": [
+    "Rotom-Wash",
+    "Sylveon"
+   ],
+   "back": [
+    "Hydreigon",
+    "Metagross"
+   ],
+   "games": 68,
+   "win": 0.574
+  },
+  {
+   "lead": [
+    "Hydreigon",
+    "Rillaboom"
+   ],
+   "back": [
+    "Metagross",
+    "Volcarona"
+   ],
+   "games": 66,
+   "win": 0.712
+  },
+  {
+   "lead": [
+    "Rotom-Wash",
+    "Sylveon"
+   ],
+   "back": [
+    "Metagross",
+    "Volcarona"
+   ],
+   "games": 64,
+   "win": 0.5
+  },
+  {
+   "lead": [
+    "Metagross",
+    "Rotom-Wash"
+   ],
+   "back": [
+    "Hydreigon",
+    "Volcarona"
+   ],
+   "games": 61,
+   "win": 0.541
+  }
+ ],
+ "turn1": [
+  {
+   "mon": "Rotom",
+   "move": "Hydro Pump",
+   "games": 226
+  },
+  {
+   "mon": "Hydreigon",
+   "move": "Tailwind",
+   "games": 223
+  },
+  {
+   "mon": "Rotom",
+   "move": "Thunderbolt",
+   "games": 197
+  },
+  {
+   "mon": "Sylveon",
+   "move": "Hyper Voice",
+   "games": 192
+  },
+  {
+   "mon": "Rotom",
+   "move": "Protect",
+   "games": 184
+  },
+  {
+   "mon": "Volcarona",
+   "move": "Protect",
+   "games": 168
+  },
+  {
+   "mon": "Hydreigon",
+   "move": "Protect",
+   "games": 161
+  },
+  {
+   "mon": "Metagross",
+   "move": "Psychic Fangs",
+   "games": 159
+  }
+ ],
+ "archetypes": [
+  {
+   "name": "Trick Room",
+   "win": 0.813,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Sylveon",
+      "Volcarona"
+     ],
+     "games": 23,
+     "win": 0.913
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rotom-Wash"
+     ],
+     "games": 16,
+     "win": 0.938
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Volcarona"
+     ],
+     "games": 13,
+     "win": 0.615
+    }
+   ],
+   "note": "Hit the setter on turn 1. If Trick Room goes up, use Protect to use up its turns."
+  },
+  {
+   "name": "Psychic Terrain",
+   "win": 0.713,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Hydreigon",
+      "Metagross"
+     ],
+     "games": 19,
+     "win": 0.789
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rotom-Wash"
+     ],
+     "games": 12,
+     "win": 0.5
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Sylveon"
+     ],
+     "games": 11,
+     "win": 0.545
+    }
+   ],
+   "note": "Fake Out and Grassy Glide fail in Psychic Terrain, and Grassy Seed does not trigger. Switch Rillaboom in later."
+  },
+  {
+   "name": "Screens",
+   "win": 0.65,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 16,
+     "win": 0.938
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Metagross"
+     ],
+     "games": 15,
+     "win": 0.667
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Sylveon"
+     ],
+     "games": 8,
+     "win": 0.75
+    }
+   ],
+   "note": "Pressure Grimmsnarl early. It leaves with Parting Shot, so attack the partner. Quiver Dance through the screens."
+  },
+  {
+   "name": "Sand",
+   "win": 0.625,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Hydreigon",
+      "Rillaboom"
+     ],
+     "games": 18,
+     "win": 0.667
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 13,
+     "win": 0.462
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Metagross"
+     ],
+     "games": 13,
+     "win": 0.923
+    }
+   ],
+   "note": "Grassy Glide and Rotom-Wash's Hydro Pump punish Ground and Rock types. Watch Rock Slide on Volcarona."
+  },
+  {
+   "name": "Rain",
+   "win": 0.613,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 15,
+     "win": 0.533
+    },
+    {
+     "pair": [
+      "Rillaboom",
+      "Rotom-Wash"
+     ],
+     "games": 9,
+     "win": 0.667
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Sylveon"
+     ],
+     "games": 9,
+     "win": 0.444
+    }
+   ],
+   "note": "Rillaboom and Hydreigon take Water well. Volcarona waits until the rain ends."
+  },
+  {
+   "name": "Redirection + setup",
+   "win": 0.6,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Sylveon",
+      "Volcarona"
+     ],
+     "games": 16,
+     "win": 0.5
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Rillaboom"
+     ],
+     "games": 11,
+     "win": 0.636
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Volcarona"
+     ],
+     "games": 11,
+     "win": 0.545
+    }
+   ],
+   "note": "Spread moves (Heat Wave, Hyper Voice) ignore redirection. Volcarona out-boosts most setup."
+  },
+  {
+   "name": "Tailwind offense",
+   "win": 0.588,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Hydreigon",
+      "Sylveon"
+     ],
+     "games": 16,
+     "win": 0.438
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Volcarona"
+     ],
+     "games": 15,
+     "win": 0.667
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Metagross"
+     ],
+     "games": 12,
+     "win": 0.583
+    }
+   ],
+   "note": "Match Tailwind with Hydreigon, and use Protect to use up theirs."
+  },
+  {
+   "name": "Raichu offense",
+   "win": 0.588,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Rotom-Wash"
+     ],
+     "games": 12,
+     "win": 0.583
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Sylveon"
+     ],
+     "games": 8,
+     "win": 0.375
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Rillaboom"
+     ],
+     "games": 8,
+     "win": 0.5
+    }
+   ],
+   "note": "Stomping Tantrum from Metagross. Rillaboom and Hydreigon resist Electric."
+  },
+  {
+   "name": "Sun",
+   "win": 0.575,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Hydreigon",
+      "Rotom-Wash"
+     ],
+     "games": 12,
+     "win": 0.917
+    },
+    {
+     "pair": [
+      "Rillaboom",
+      "Rotom-Wash"
+     ],
+     "games": 12,
+     "win": 0.25
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Sylveon"
+     ],
+     "games": 10,
+     "win": 0.6
+    }
+   ],
+   "note": "Lead Rotom-Wash. Keep Metagross, Volcarona and Rillaboom away from Charizard's Heat Wave."
+  },
+  {
+   "name": "Snow / Aurora Veil",
+   "win": 0.563,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 12,
+     "win": 0.917
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Volcarona"
+     ],
+     "games": 12,
+     "win": 0.417
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Metagross"
+     ],
+     "games": 10,
+     "win": 0.5
+    }
+   ],
+   "note": "Break the setter before Aurora Veil goes up: Fake Out it or target it on turn 1. Heat Wave hits Ice types hard."
+  },
+  {
+   "name": "Metagross mirror",
+   "win": 0.55,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Volcarona"
+     ],
+     "games": 19,
+     "win": 0.421
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rotom-Wash"
+     ],
+     "games": 14,
+     "win": 0.5
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Sylveon"
+     ],
+     "games": 11,
+     "win": 0.455
+    }
+   ],
+   "note": "Heat Wave from Volcarona and Dark Pulse from Hydreigon beat Metagross. Rotom-Wash burns it."
+  },
+  {
+   "name": "Fake Out balance",
+   "win": 0.538,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 11,
+     "win": 0.727
+    },
+    {
+     "pair": [
+      "Rotom-Wash",
+      "Volcarona"
+     ],
+     "games": 9,
+     "win": 0.667
+    },
+    {
+     "pair": [
+      "Rillaboom",
+      "Volcarona"
+     ],
+     "games": 8,
+     "win": 0.375
+    }
+   ],
+   "note": "Intimidate does not affect Volcarona, Sylveon, Hydreigon or Rotom-Wash. Lead special attackers."
+  },
+  {
+   "name": "Mega Flying Tailwind",
+   "win": 0.525,
+   "games": 80,
+   "leads": [
+    {
+     "pair": [
+      "Metagross",
+      "Volcarona"
+     ],
+     "games": 17,
+     "win": 0.588
+    },
+    {
+     "pair": [
+      "Metagross",
+      "Rillaboom"
+     ],
+     "games": 11,
+     "win": 0.545
+    },
+    {
+     "pair": [
+      "Hydreigon",
+      "Volcarona"
+     ],
+     "games": 11,
+     "win": 0.727
+    }
+   ],
+   "note": "Rotom-Wash's Thunderbolt and Iron Head from Metagross. Keep Rillaboom and Volcarona away from Flying moves."
+  }
+ ],
+ "hardest": [
+  {
+   "win": 0,
+   "team": [
+    "Froslass @ Froslassite",
+    "Sneasler @ Electric Seed",
+    "Rillaboom @ Miracle Seed",
+    "Dragonite @ Dragoninite",
+    "Kingambit @ Life Orb",
+    "Garchomp @ Choice Scarf"
+   ]
+  },
+  {
+   "win": 0,
+   "team": [
+    "Raichu @ Raichunite Y",
+    "Sneasler @ Focus Sash",
+    "Basculegion @ Choice Scarf",
+    "Garchomp @ Roseli Berry",
+    "Kingambit @ Life Orb",
+    "Charizard @ Charizardite Y"
+   ]
+  },
+  {
+   "win": 0.125,
+   "team": [
+    "Lucario @ Lucarionite Z",
+    "Kingambit @ Focus Sash",
+    "Basculegion @ Spell Tag",
+    "Archaludon @ Sitrus Berry",
+    "Whimsicott @ Life Orb",
+    "Dragonite @ Dragoninite"
+   ]
+  },
+  {
+   "win": 0.125,
+   "team": [
+    "Dragonite @ Dragoninite",
+    "Volcarona @ Rocky Helmet",
+    "Floette-Eternal @ Floettite",
+    "Sneasler @ White Herb",
+    "Rillaboom @ Miracle Seed",
+    "Basculegion @ Mystic Water"
+   ]
+  },
+  {
+   "win": 0.125,
+   "team": [
+    "Dragonite @ Dragoninite",
+    "Ninetales-Alola @ Never-Melt Ice",
+    "Raichu @ Raichunite Y",
+    "Kingambit @ Chople Berry",
+    "Sneasler @ Psychic Seed",
+    "Rillaboom @ Miracle Seed"
+   ]
+  }
+ ],
+ "sample": {
+  "kind": "Sun",
+  "opponent": [
+   "Charizard",
+   "Venusaur",
+   "Salamence",
+   "Garchomp",
+   "Incineroar",
+   "Armarouge"
+  ],
+  "turns": [
+   {
+    "turn": 0,
+    "steps": [
+     "You: Hydreigon comes in",
+     "You: Rotom comes in",
+     "Opponent: Charizard comes in",
+     "Opponent: Salamence comes in"
+    ]
+   },
+   {
+    "turn": 1,
+    "steps": [
+     "Opponent: Garchomp comes in",
+     "Opponent: Salamence uses Tailwind",
+     "You: Hydreigon uses Tailwind",
+     "You: Rotom uses Hydro Pump on Garchomp"
+    ]
+   },
+   {
+    "turn": 2,
+    "steps": [
+     "Opponent: Venusaur comes in",
+     "You: Metagross comes in",
+     "Opponent: Garchomp uses Dragon Claw on Metagross",
+     "You: Rotom uses Hydro Pump on Garchomp",
+     "Opponent: Garchomp faints",
+     "Opponent: Charizard comes in"
+    ]
+   },
+   {
+    "turn": 3,
+    "steps": [
+     "Opponent: Salamence comes in",
+     "You: Metagross Mega Evolves",
+     "Opponent: Charizard Mega Evolves",
+     "You: Metagross uses Psychic Fangs on Salamence",
+     "Opponent: Charizard uses Heat Wave on Rotom",
+     "You: Metagross faints",
+     "You: Rotom uses Thunderbolt on Salamence",
+     "Opponent: Salamence faints",
+     "You: Volcarona comes in",
+     "Opponent: Venusaur comes in"
+    ]
+   },
+   {
+    "turn": 4,
+    "steps": [
+     "You: Hydreigon comes in",
+     "Opponent: Venusaur uses Sludge Bomb on Volcarona",
+     "You: Volcarona uses Heat Wave on Venusaur",
+     "Opponent: Venusaur faints",
+     "Opponent: Charizard uses Ancient Power on Volcarona",
+     "You: Volcarona faints",
+     "You: Rotom comes in"
+    ]
+   },
+   {
+    "turn": 5,
+    "steps": [
+     "You: Hydreigon uses Protect",
+     "Opponent: Charizard uses Heat Wave on Rotom",
+     "You: Rotom uses Hydro Pump on Charizard"
+    ]
+   },
+   {
+    "turn": 6,
+    "steps": [
+     "You: Hydreigon uses Draco Meteor on Charizard",
+     "Opponent: Charizard faints"
+    ]
+   }
+  ]
+ }
+}

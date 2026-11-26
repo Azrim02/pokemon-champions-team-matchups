@@ -1,0 +1,37 @@
+{
+ "plan": [
+  "Turn 1: Rillaboom uses Fake Out on the biggest threat while Hydreigon sets Tailwind. Focus Sash keeps Hydreigon alive for one hit.",
+  "Grassy Terrain triggers Volcarona's Grassy Seed. Under Tailwind, use Quiver Dance once or twice while a partner takes attention, then sweep with Heat Wave and Bug Buzz.",
+  "Mega Metagross removes Fairies and Sneasler. Keep it away from Charizard-Mega-Y and strong Fire or Ground attacks.",
+  "Against Trick Room, use Protect on both sides to use up its turns. Volcarona's Quiver Dance boosts still count after Trick Room ends."
+ ],
+ "cautions": [
+  "Charizard-Mega-Y OHKOs Metagross, Volcarona and Rillaboom. Only Rotom-Wash OHKOs it, so keep Rotom-Wash healthy.",
+  "Nothing OHKOs Kingambit without a boost. Burn it with Will-O-Wisp, or hit it with a boosted Heat Wave.",
+  "Volcarona and Sylveon are weak to Poison, and no member resists it. Watch Sneasler's Dire Claw.",
+  "Rain halves Heat Wave. Against rain, Volcarona needs more boosts, or it stays in the back."
+ ],
+ "roles": {
+  "Metagross": "Mega attacker. Psychic Fangs for Fighting types, Iron Head for Fairies, Stomping Tantrum for Fire and Steel.",
+  "Hydreigon": "Tailwind setter with Focus Sash. Draco Meteor and Dark Pulse for Dragons, Ghosts and Psychics.",
+  "Volcarona": "Quiver Dance win condition. Grassy Seed gives +1 Def in Grassy Terrain. Heat Wave and Bug Buzz.",
+  "Rillaboom": "Fake Out, Grassy Glide priority and terrain. High Horsepower for Steel types.",
+  "Rotom-Wash": "Answer to Charizard-Mega-Y and Fire types. Will-O-Wisp for physical attackers like Kingambit.",
+  "Sylveon": "Spread Fairy damage with Hyper Voice. Immune to Dragon; Quick Attack finishes weak targets."
+ },
+ "archetypes": {
+  "Sun": "Lead Rotom-Wash. Keep Metagross, Volcarona and Rillaboom away from Charizard's Heat Wave.",
+  "Rain": "Rillaboom and Hydreigon take Water well. Volcarona waits until the rain ends.",
+  "Sand": "Grassy Glide and Rotom-Wash's Hydro Pump punish Ground and Rock types. Watch Rock Slide on Volcarona.",
+  "Snow / Aurora Veil": "Break the setter before Aurora Veil goes up: Fake Out it or target it on turn 1. Heat Wave hits Ice types hard.",
+  "Trick Room": "Hit the setter on turn 1. If Trick Room goes up, use Protect to use up its turns.",
+  "Psychic Terrain": "Fake Out and Grassy Glide fail in Psychic Terrain, and Grassy Seed does not trigger. Switch Rillaboom in later.",
+  "Tailwind offense": "Match Tailwind with Hydreigon, and use Protect to use up theirs.",
+  "Redirection + setup": "Spread moves (Heat Wave, Hyper Voice) ignore redirection. Volcarona out-boosts most setup.",
+  "Fake Out balance": "Intimidate does not affect Volcarona, Sylveon, Hydreigon or Rotom-Wash. Lead special attackers.",
+  "Screens": "Pressure Grimmsnarl early. It leaves with Parting Shot, so attack the partner. Quiver Dance through the screens.",
+  "Mega Flying Tailwind": "Rotom-Wash's Thunderbolt and Iron Head from Metagross. Keep Rillaboom and Volcarona away from Flying moves.",
+  "Raichu offense": "Stomping Tantrum from Metagross. Rillaboom and Hydreigon resist Electric.",
+  "Metagross mirror": "Heat Wave from Volcarona and Dark Pulse from Hydreigon beat Metagross. Rotom-Wash burns it."
+ }
+}
